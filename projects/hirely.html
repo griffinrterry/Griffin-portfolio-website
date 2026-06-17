@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hirely — Case Study · Griffin Terry</title>
+  <meta name="description" content="Hirely: a per-job resume tailoring tool with an anti-fabrication wedge, plus the multi-channel growth engine behind it. Case study by Griffin Terry." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <!-- Nav -->
+  <header class="nav">
+    <div class="container nav__inner">
+      <a href="../index.html" class="brand">Griffin<span>.</span>Terry</a>
+      <nav class="nav__links">
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#work">Work</a>
+        <a href="../index.html#contact">Contact</a>
+        <a href="../index.html#contact" class="nav__cta">Get in touch</a>
+      </nav>
+      <button class="nav__toggle" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Case hero -->
+    <section class="case-hero">
+      <div class="container">
+        <a href="../index.html#work" class="backlink">← Back to work</a>
+        <h1 class="reveal">Hirely</h1>
+        <p class="lead reveal">A tool that turns your real resume plus a job description into a tailored resume for that specific role — built on a hard anti-fabrication rule: real experience in, tailored output out, nothing invented.</p>
+        <div class="case-meta reveal">
+          <div><span>Role</span><b>Founder — Product &amp; Growth</b></div>
+          <div><span>Type</span><b>0→1 Consumer / Career SaaS</b></div>
+          <div><span>Timeline</span><b>Mar 2026 – Present</b></div>
+          <div><span>Live</span><b><a href="https://www.hirelyapply.com" target="_blank" rel="noopener" style="color:var(--accent-2)">hirelyapply.com ↗</a></b></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="case-body">
+      <div class="container">
+
+        <!-- Problem -->
+        <section class="case-section reveal">
+          <h2>The problem</h2>
+          <p><strong>Qualified candidates don't get seen by recruiters.</strong> Job-seekers are told to tailor their resume to every role so it actually surfaces, but doing it well is slow and most don't. The tools that promise to automate it have a trust problem: many <strong>inflate or invent experience</strong> to match the job description, and increasingly resumes get flagged as AI-written — which can sink a candidate before a human ever reads it.</p>
+          <p>So applicants are stuck between two bad options: spend hours manually rewriting, or use a generator that risks fabricating their history and sounding robotic.</p>
+        </section>
+
+        <!-- Insight / wedge -->
+        <section class="case-section reveal">
+          <h2>The insight &amp; the wedge</h2>
+          <p>The opportunity wasn't "another resume generator" — it was <strong>trust</strong>. Hirely's wedge is <strong>anti-fabrication</strong>: it only reframes and surfaces experience the person actually has, tuned to the specific job, and keeps the writing sounding human so it doesn't get flagged.</p>
+          <div class="callout">
+            <b>Operating principle — the "115% rule":</b> present a candidate at the strongest honest version of themselves, never beyond what's real. Real experience in, tailored resume out, nothing invented.
+          </div>
+          <p>This single constraint became the product's identity and the through-line for every decision — from how the output is generated to how we talk about it in marketing.</p>
+        </section>
+
+        <!-- What I built -->
+        <section class="case-section reveal">
+          <h2>What I built</h2>
+          <p>As founder I work across product and growth. Hirely grew from a single tailoring tool into a full job-search workspace — I <strong>architected and deployed the entire full-stack MVP myself</strong>, using Claude Code to accelerate development. The product today:</p>
+          <ul>
+            <li><strong>Resume tailoring + Fit Analysis</strong> — paste a job description and Hirely rewrites your real resume for that role in seconds, then scores the fit (an overall match score with experience, skills, and education breakdowns) and shows exactly which keywords matched and which are missing.</li>
+            <li><strong>Stand-Out Scan</strong> — the wedge feature. It rates how much your resume or cover letter "blends in" with generic AI writing, highlights the exact lines that read like the median application, and rewrites them to sound like you. This is the anti-fabrication, human-sounding principle made tangible.</li>
+            <li><strong>Application tracker &amp; funnel analytics</strong> — a saved-jobs pipeline (Saved → Applied → Screen → Onsite → Offer) with per-application grades, plus a funnel view that flags where a user's search is converting or leaking against healthy benchmark ranges.</li>
+            <li><strong>"Needs a nudge" follow-ups</strong> — drafts interview thank-yous and check-ins for the user to review and send from their own email. Consistent with the brand: <em>we draft it, you send it — we never send anything for you.</em></li>
+            <li><strong>Cover letter tips, outreach setup &amp; interview intel</strong> — supporting tools per job, plus an authenticity scan and one-click .docx export.</li>
+            <li><strong>Profile &amp; document management</strong> — career preferences, target roles/locations, and managed resume / cover letter / CV / LinkedIn documents that feed the tailoring.</li>
+          </ul>
+          <p>The model is freemium — a daily "Tailors" quota (5/day) gates the core action — built on:</p>
+          <div class="pcard__meta" style="margin-bottom:6px">
+            <span class="chip">Supabase — data &amp; auth</span>
+            <span class="chip">Stripe — payments</span>
+            <span class="chip">Vercel — deploy</span>
+            <span class="chip">Agentic AI — distribution</span>
+          </div>
+        </section>
+
+        <!-- Screenshots -->
+        <section class="case-section reveal">
+          <h2>The product</h2>
+          <p>A look inside Hirely:</p>
+          <div class="shots">
+            <figure class="shot">
+              <img src="../assets/screenshots/01-dashboard.png" alt="Hirely dashboard with job pipeline and Stand-Out Scan" loading="lazy" onerror="this.remove();this.closest('.shot').classList.add('shot--empty')" />
+              <figcaption>Dashboard — tailor a job, run a Stand-Out Scan, and track saved jobs through the Saved → Applied → Screen → Onsite → Offer pipeline with per-application grades.</figcaption>
+            </figure>
+            <figure class="shot">
+              <img src="../assets/screenshots/09-tailor-new.png" alt="Tailor a new resume from a job description" loading="lazy" onerror="this.remove();this.closest('.shot').classList.add('shot--empty')" />
+              <figcaption>Tailor a new resume — paste a job description (or import a URL) and Hirely targets the resume to it. A daily "Tailors" quota powers the freemium model.</figcaption>
+            </figure>
+            <figure class="shot">
+              <img src="../assets/screenshots/05-tailor-detail-stripe-A.png" alt="Fit analysis showing an 88/100 match for a Stripe role" loading="lazy" onerror="this.remove();this.closest('.shot').classList.add('shot--empty')" />
+              <figcaption>Fit Analysis — an overall match score (88/100 here) with experience, skills, and education breakdowns, matched vs. missing keywords, and the tailored resume ready to export as .docx.</figcaption>
+            </figure>
+            <figure class="shot">
+              <img src="../assets/screenshots/06-tailor-detail-figma-C.png" alt="Fit analysis showing a 66/100 match for a Figma role" loading="lazy" onerror="this.remove();this.closest('.shot').classList.add('shot--empty')" />
+              <figcaption>Honest scoring — a weaker 66/100 fit is shown plainly, with the missing skills called out rather than papered over. The anti-fabrication principle in the product itself.</figcaption>
+            </figure>
+            <figure class="shot">
+              <img src="../assets/screenshots/07-scan.png" alt="Stand-Out Scan upload screen" loading="lazy" onerror="this.remove();this.closest('.shot').classList.add('shot--empty')" />
+              <figcaption>Stand-Out Scan — upload a resume or cover letter (or pull in one you've tailored) to see how much it blends in with generic AI writing.</figcaption>
+            </figure>
+            <figure class="shot">
+              <img src="../assets/screenshots/08-scan-result.png" alt="Stand-Out Scan results with a 77/100 blend-in score and flagged phrases" loading="lazy" onerror="this.remove();this.closest('.shot').classList.add('shot--empty')" />
+              <figcaption>Scan results — a "blend-in" score (77/100) flags the exact lines that read like the median AI application, explains why, and suggests concrete rewrites.</figcaption>
+            </figure>
+            <figure class="shot">
+              <img src="../assets/screenshots/02-funnel.png" alt="Job-search funnel analytics" loading="lazy" onerror="this.remove();this.closest('.shot').classList.add('shot--empty')" />
+              <figcaption>Funnel analytics — applied → screen → onsite → offer conversion, with leak detection against healthy benchmark ranges.</figcaption>
+            </figure>
+            <figure class="shot">
+              <img src="../assets/screenshots/04-follow-ups.png" alt="Needs a nudge follow-up drafts" loading="lazy" onerror="this.remove();this.closest('.shot').classList.add('shot--empty')" />
+              <figcaption>Needs a nudge — drafted interview thank-yous and check-ins the user reviews and sends from their own email. Hirely never sends anything for you.</figcaption>
+            </figure>
+            <figure class="shot">
+              <img src="../assets/screenshots/03-resumes.png" alt="Manage tailored resumes" loading="lazy" onerror="this.remove();this.closest('.shot').classList.add('shot--empty')" />
+              <figcaption>Manage Resumes — every tailored resume in one place with its status and grade.</figcaption>
+            </figure>
+            <figure class="shot">
+              <img src="../assets/screenshots/10-profile.png" alt="Profile and document management settings" loading="lazy" onerror="this.remove();this.closest('.shot').classList.add('shot--empty')" />
+              <figcaption>Profile — career preferences (target roles, locations, skills) and managed resume / cover letter / CV / LinkedIn documents that feed every tailor.</figcaption>
+            </figure>
+          </div>
+          <div class="placeholder" style="margin-top:14px">
+            <b>Demo:</b> reserved spot for your product demo/walkthrough once it's ready.
+          </div>
+        </section>
+
+        <!-- Marketing org -->
+        <section class="case-section reveal">
+          <h2>Hirely Marketing — the growth engine</h2>
+          <p>Beyond the product, I built Hirely's <strong>growth and content system</strong>. The strategy is trust-first: earn credibility with job-seekers before ever pitching, and never let marketing make a claim the product can't back up. The same anti-fabrication and brand-voice rules that govern the product govern every post.</p>
+
+          <h3>Reddit growth dispatch</h3>
+          <p>A <strong>read-only, quiet-first</strong> system for finding frustrated job-seekers on Reddit and helping them genuinely. It scans target subreddits, scores threads on where I can actually add value, checks each subreddit's rules before drafting, and produces reply drafts I review and post by hand — with a hard ceiling of roughly <strong>one Hirely mention per ten replies</strong>. The rule that governs it: earn trust, don't extract signups.</p>
+
+          <h3>TikTok carousel content (v2 visual pivot)</h3>
+          <p>A system that studies why a viral TikTok carousel works — its hook, slide rhythm, and payoff — then rebuilds that <em>structure</em> with Hirely's own honest message. It produces slide-by-slide copy in Hirely's voice, captions, hashtags, and copyright-free image directions, all passing the same brand-compliance bar as everything else (no fabricated claims, no copied content).</p>
+
+          <h3>Multi-channel voice</h3>
+          <p>A consistent brand voice across LinkedIn, Reddit, and X — with explicit banned phrases, forbidden claims, and the 115% honesty framing baked in so the marketing never oversells the product.</p>
+
+          <div class="callout" style="margin-top:8px">
+            <b>Early traction:</b> the automated, AI-agent-driven distribution generated <b>2,000+ impressions and 100+ profile visits in the first 14 days</b> across LinkedIn, Instagram, and TikTok — with <b>LinkedIn the standout channel</b> driving the bulk of that reach.
+          </div>
+        </section>
+
+        <!-- Outcomes -->
+        <section class="case-section reveal">
+          <h2>Outcomes &amp; early signal</h2>
+          <p>Hirely is in <strong>early beta</strong>, where the goal is learning fast rather than chasing scale. The most telling number isn't reach — it's activation:</p>
+          <div class="stats">
+            <div class="stat"><b>100%</b><span>of waitlist signups (since the scan feature launched) have used it</span></div>
+            <div class="stat"><b>2,000+</b><span>LinkedIn impressions in 14 days</span></div>
+            <div class="stat"><b>3</b><span>active beta users in a direct feedback loop</span></div>
+          </div>
+          <p>With <strong>10 waitlist signups and 3 hands-on beta users</strong>, the early read is strong: the <strong>scan feature is the most-used part of the product</strong>, with each beta user returning to it several times. That repeat usage — and 100% activation among new signups — is the signal that Hirely solves a real, recurring need.</p>
+          <p>I work in tight <strong>agile cycles</strong>: ship, gather direct user feedback, and update the product continuously. The roadmap is set by what beta users actually do and ask for, not by guesswork.</p>
+        </section>
+
+        <!-- What I'd do next -->
+        <section class="case-section reveal">
+          <h2>What I learned &amp; what's next</h2>
+          <p>The biggest lesson: in a crowded "AI resume" space, a clear constraint — don't fabricate — is more defensible than another feature. It shaped the product, the funnel, and the brand voice into one coherent thing.</p>
+          <p>The second: building it myself end-to-end (Supabase, Stripe, Vercel, AI agents for distribution) means feedback turns into shipped changes in days, not sprints. The early activation data already pointed to the scan feature as the wedge — so the focus now is deepening what's clearly working rather than widening the surface area.</p>
+          <p class="placeholder"><b>Roadmap (still being shaped):</b> next priorities are converting waitlist interest into active beta usage and turning the scan feature's strong activation into retention. Happy to talk through the thinking.</p>
+        </section>
+
+        <section class="case-section reveal" style="text-align:center">
+          <a href="../index.html#work" class="btn btn--ghost">← Back to all work</a>
+          <a href="../index.html#contact" class="btn btn--primary">Get in touch</a>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>© 2026 Griffin Terry</span>
+      <span>Hirely · Case study</span>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
