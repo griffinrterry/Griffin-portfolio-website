@@ -194,6 +194,16 @@ a { color: inherit; text-decoration: none; }
   padding: 28px;
 }
 .about__card h3 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted-2); margin-bottom: 18px; }
+.headshot {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  object-position: 50% 30%;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  margin-bottom: 22px;
+  display: block;
+}
 .factlist { list-style: none; display: flex; flex-direction: column; gap: 14px; }
 .factlist li { display: flex; gap: 12px; align-items: flex-start; font-size: 0.97rem; }
 .factlist li b { color: var(--accent-2); font-weight: 700; min-width: 18px; }
@@ -263,6 +273,7 @@ a { color: inherit; text-decoration: none; }
 .backlink { color: var(--muted); font-size: 0.92rem; display: inline-flex; gap: 8px; align-items: center; margin-bottom: 30px; }
 .backlink:hover { color: var(--text); }
 .case-hero h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); letter-spacing: -0.03em; line-height: 1.05; font-weight: 800; max-width: 18ch; }
+.case-logo { width: auto; max-width: 280px; height: auto; display: block; margin-bottom: 6px; }
 .case-hero .lead { margin-top: 20px; color: var(--muted); font-size: 1.2rem; max-width: 60ch; }
 .case-meta {
   display: flex; flex-wrap: wrap; gap: 36px;
