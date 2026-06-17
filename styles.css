@@ -314,10 +314,12 @@ a { color: inherit; text-decoration: none; }
 .stat b { display: block; font-size: 2rem; font-weight: 800; letter-spacing: -0.02em; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .stat span { color: var(--muted); font-size: 0.92rem; }
 
-/* Screenshot gallery */
-.shots { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin: 10px 0; }
+/* Screenshot gallery — masonry flow so cards size to their content
+   instead of stretching to align into a rigid grid */
+.shots { column-count: 2; column-gap: 18px; margin: 10px 0; }
 .shot {
-  margin: 0;
+  break-inside: avoid;
+  margin: 0 0 18px;
   border: 1px solid var(--line);
   background: var(--card);
   border-radius: var(--radius-sm);
@@ -395,7 +397,7 @@ a { color: inherit; text-decoration: none; }
   .about { grid-template-columns: 1fr; gap: 32px; }
   .projects-grid { grid-template-columns: 1fr; }
   .stats { grid-template-columns: 1fr; }
-  .shots { grid-template-columns: 1fr; }
+  .shots { column-count: 1; }
   .nav__links { display: none; }
   .nav__toggle { display: block; }
   .nav__links.open {
