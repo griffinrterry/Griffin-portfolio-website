@@ -87,8 +87,8 @@
         <section class="case-section reveal">
           <h2>The product</h2>
           <p>A look inside Hirely:</p>
-          <figure class="demo-video">
-            <video src="../assets/video/hirely-demo.mp4" controls preload="metadata" playsinline poster="../assets/screenshots/01-dashboard.png"></video>
+          <figure class="demo-video" onmouseenter="this.querySelector('video').controls=true" onmouseleave="this.querySelector('video').controls=false">
+            <video src="../assets/video/hirely-demo.mp4" autoplay muted loop preload="auto" playsinline poster="../assets/screenshots/01-dashboard.png"></video>
             <figcaption>Demo: a walkthrough of the Hirely workflow — tailoring a resume to a job, running a Fit Analysis and Stand-Out Scan, and tracking applications through the pipeline.</figcaption>
           </figure>
           <div class="shots">
