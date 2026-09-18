@@ -55,6 +55,34 @@ uppercase is for short labels only. Tabular numerals everywhere figures appear.
   caption; constrained by height so a tall phone shot can't dominate a column.
 - **Tables are tables.** The ledger is a real `<table>` with figure, meaning, source.
 
+## Themes
+
+Light is the default: the use scene is a recruiter skimming in an office, often
+mid-morning. Dark is offered as a toggle, not a category default.
+
+Dark is the same record read under a lamp, not an inversion — the ledger green
+survives in the ground and the correction mark lifts so it still reads as pen.
+
+| Token | Light | Dark |
+|---|---|---|
+| `--paper` | `#EFF2EC` | `#13160F` |
+| `--paper-2` | `#E6EAE2` | `#1A1E16` |
+| `--ink` | `#15170F` | `#E8EBE3` |
+| `--ink-2` | `#454A3E` | `#B3B8AB` |
+| `--ink-3` | `#666B5D` | `#8A9081` |
+| `--rule` | `#D2D8CA` | `#2C3228` |
+| `--mark` | `#A02F12` | `#E2673E` |
+
+Three states. No stored value means the OS decides, via
+`@media (prefers-color-scheme: dark)` guarded by `:root:not([data-theme="light"])`.
+An explicit choice sets `data-theme` on the root and persists to `localStorage`
+(every access guarded — storage throws in private mode). A blocking inline script in
+`<head>` applies the stored value before first paint, so there is no flash of the
+wrong theme. `color-scheme` is set per theme so browser-drawn UI follows.
+
+The toggle lives in the masthead with drawn sun/moon SVGs at a shared 1.4 stroke;
+its `aria-label` names the theme it will switch to.
+
 ## Motion
 
 Exactly one authored moment: in the hero's correction block, the wrong value strikes
@@ -66,6 +94,13 @@ disables the animation and collapses transitions.
 
 Selection, focus ring, scrollbar, link underline offset and tabular numerals are all
 themed from the palette rather than left at browser defaults.
+
+## Accepted deviation
+
+The detector flags the hero `h1` as oversized (74px, 36vh). Kept deliberately: it is
+the page's primary gesture, and headline, lede and both CTAs still sit above the fold
+at 1440x950. Reduced twice from the original 5.6rem; shrinking further to satisfy the
+rule would cost the design its voice.
 
 ## Status
 
