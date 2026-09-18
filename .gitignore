@@ -9,3 +9,4 @@ Thumbs.db
 
 # Node (only if you later add a build step)
 node_modules/
+.env*
