@@ -458,3 +458,92 @@ a { color: inherit; text-decoration: none; }
   .reveal { opacity: 1; transform: none; transition: none; }
   html { scroll-behavior: auto; }
 }
+
+/* ---------- next4 / agent-system components ---------- */
+
+/* Phone screenshots: 3-up grid, no masonry (shots are uniform height) */
+.shots--phone { column-count: auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.shots--phone .shot { break-inside: auto; margin-bottom: 0; }
+.shots--phone .shot img { border-radius: var(--radius-sm); }
+
+/* Horizontal asset strip (carousel slides, generated assets) */
+.strip {
+  display: flex; gap: 14px; overflow-x: auto; padding: 4px 0 16px;
+  scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
+}
+.strip::-webkit-scrollbar { height: 8px; }
+.strip::-webkit-scrollbar-thumb { background: var(--line); border-radius: 99px; }
+.strip figure {
+  flex: 0 0 auto; width: 232px; scroll-snap-align: start;
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-sm); overflow: hidden;
+}
+.strip img, .strip video { display: block; width: 100%; height: auto; }
+
+/* Two-column media + text block */
+.split { display: grid; grid-template-columns: 258px 1fr; gap: 32px; align-items: start; margin: 10px 0 8px; }
+.split video, .split img {
+  width: 100%; border-radius: var(--radius-sm); border: 1px solid var(--line); display: block;
+}
+.split p:last-child { margin-bottom: 0; }
+
+/* Numbered system steps */
+.flow { display: grid; gap: 14px; margin: 8px 0 20px; max-width: 74ch; }
+.flow__step {
+  display: grid; grid-template-columns: 34px 1fr; gap: 16px; align-items: start;
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 18px 20px;
+}
+.flow__step b {
+  width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center;
+  font-size: 0.85rem; font-weight: 700; color: var(--bg);
+  background: var(--accent-2);
+}
+.flow__step h4 { font-size: 1rem; margin-bottom: 4px; }
+.flow__step p { color: var(--muted); font-size: 0.97rem; margin: 0; max-width: none; }
+
+/* Pillar / rule grid */
+.grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 10px 0 20px; }
+.gcard {
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 20px;
+}
+.gcard span {
+  display: block; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.09em;
+  color: var(--accent-2); font-weight: 700; margin-bottom: 8px;
+}
+.gcard h4 { font-size: 1.02rem; margin-bottom: 8px; letter-spacing: -0.01em; }
+.gcard p { color: var(--muted); font-size: 0.94rem; margin: 0; max-width: none; }
+
+/* Rules list: the pre-post checklist */
+.rules { display: grid; gap: 10px; margin: 10px 0 20px; max-width: 78ch; }
+.rule {
+  display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: baseline;
+  border-left: 2px solid var(--accent-3); padding: 12px 0 12px 18px;
+}
+.rule b { color: var(--text); font-size: 0.95rem; white-space: nowrap; }
+.rule span { color: var(--muted); font-size: 0.95rem; }
+
+/* Homepage agent-systems section */
+.agents { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.acard {
+  background: linear-gradient(180deg, var(--card-2), var(--card));
+  border: 1px solid var(--line); border-radius: var(--radius); padding: 28px;
+}
+.acard__i { font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted-2); font-weight: 700; margin-bottom: 14px; display: block; }
+.acard h3 { font-size: 1.18rem; margin-bottom: 10px; letter-spacing: -0.01em; }
+.acard p { color: var(--muted); font-size: 0.98rem; }
+
+@media (max-width: 860px) {
+  .agents { grid-template-columns: 1fr; }
+  .split { grid-template-columns: 1fr; gap: 20px; }
+  .split video, .split img { max-width: 300px; }
+  .shots--phone { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .shots--phone { grid-template-columns: 1fr; }
+  .rule { grid-template-columns: 1fr; gap: 4px; }
+}
+
+/* Featured project card spans the grid */
+.pcard--wide { grid-column: 1 / -1; }
+.pcard--wide h3 { font-size: 1.9rem; }
+.pcard--wide p { max-width: 68ch; }
+@media (max-width: 860px) { .pcard--wide h3 { font-size: 1.5rem; } }

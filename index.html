@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Griffin Terry: Product Portfolio</title>
-  <meta name="description" content="Griffin Terry: solo founder & product builder. A portfolio of products I've shipped end-to-end." />
+  <title>Griffin Terry: Product &amp; Agent Systems Portfolio</title>
+  <meta name="description" content="Griffin Terry: product builder and founder. I ship 0→1 products end-to-end and design the AI agent systems that run them — next4, Hirely, CoPilot." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -18,6 +18,7 @@
       <nav class="nav__links">
         <a href="#about">About</a>
         <a href="#work">Work</a>
+        <a href="#agents">Agent systems</a>
         <a href="#experience">Experience</a>
         <a href="#contact">Contact</a>
         <a href="#contact" class="nav__cta">Get in touch</a>
@@ -30,9 +31,9 @@
     <!-- Hero -->
     <section class="hero">
       <div class="container">
-        <span class="eyebrow reveal"><span class="dot"></span> Product · Solo Founder · Builder</span>
-        <h1 class="reveal">I build products that <span class="grad">solve real problems</span>, then ship them.</h1>
-        <p class="lead reveal">I'm Griffin Terry, the solo founder of Hirely. I work across the whole process, from spotting a problem to scoping the product, building it, and getting it in front of users. This is what I've shipped.</p>
+        <span class="eyebrow reveal"><span class="dot"></span> Product · Data · Agent Systems</span>
+        <h1 class="reveal">I ship products end-to-end, and build the <span class="grad">agent systems</span> that run them.</h1>
+        <p class="lead reveal">I'm Griffin Terry. I co-founded <strong>next4</strong>, a college-matching app now on the App Store, and I'm the solo founder of <strong>Hirely</strong>. I work across the whole thing: finding the problem, modeling the data, building the product, and designing the AI systems that handle its distribution. This is what I've shipped.</p>
         <div class="hero__actions reveal">
           <a href="#work" class="btn btn--primary">View my work →</a>
           <a href="assets/GriffinTerry-Resume.pdf" target="_blank" rel="noopener" class="btn btn--ghost">Download résumé</a>
@@ -46,23 +47,26 @@
       <div class="container">
         <div class="section__head reveal">
           <p class="section__kicker">About me</p>
-          <h2>Founder-minded, product-obsessed.</h2>
+          <h2>I build the product, then the system that runs it.</h2>
         </div>
         <div class="about">
           <div class="about__body reveal">
-            <p>I'm the <strong>solo founder of Hirely</strong> and a <em>cum laude</em> CU Boulder graduate (B.A. in Political Science &amp; Economics, minor in Business). I build products end-to-end. I architected and shipped Hirely's full-stack MVP on Supabase, Stripe, and Vercel, and I ran its growth across LinkedIn, Instagram, and TikTok.</p>
-            <p>I gravitate toward the messy middle of product work, where a vague problem has to be turned into something users actually need. That instinct runs through everything here, from validating CoPilot's market with 100+ customer interviews to automating Hirely's distribution with AI agents. What I care about most is <strong>honesty in the product</strong>, building things that genuinely work for people.</p>
+            <p>I'm a <em>cum laude</em> CU Boulder graduate (B.A. in Political Science &amp; Economics, minor in Business) who builds products end-to-end. At <strong>next4</strong> I'm a co-founder covering product, the data layer, and marketing: I sourced and modeled a knowledge base of 6,271 institutions and 145,000+ federal facts, drove the build through Claude Code, and shipped it to the App Store. At <strong>Hirely</strong>, as solo founder, I architected and deployed the full-stack MVP on Supabase, Stripe, and Vercel.</p>
+            <p>The part I've gotten most deliberate about is <strong>working with AI agents as a system rather than a shortcut</strong>. next4's marketing runs as an agent-operated organization I designed — seven content pillars, six channels, twelve non-negotiable rules, and a verification step that has killed a finished post for failing fact-check. The engineering runs the same way: spec, plan, subagent execution with tests first, then an adversarial review pass whose job is to find what the builder missed.</p>
+            <p>I gravitate toward the messy middle, where a vague problem has to become something people actually need — validating CoPilot's market with 100+ customer interviews, coding 1,226 Reddit comments before committing a line of next4's code. What I care about most is <strong>honesty in the product</strong>: no invented resume experience at Hirely, no fabricated school statistic at next4, no admission-chance percentage we can't defend.</p>
             <p>I'm <strong>open to roles across my areas of experience.</strong></p>
           </div>
           <aside class="about__card reveal">
             <img class="headshot" src="assets/headshot.jpg" alt="Griffin Terry" loading="lazy" onerror="this.style.display='none'" />
             <h3>At a glance</h3>
             <ul class="factlist">
+              <li><b>›</b> <span>Co-founder, next4: live on the App Store</span></li>
               <li><b>›</b> <span>Solo founder, Hirely: built &amp; shipped the MVP</span></li>
               <li><b>›</b> <span>AI Trainer at Handshake</span></li>
+              <li><b>›</b> <span>Designed an agent-run marketing org: 14 posts/week, 6 channels</span></li>
               <li><b>›</b> <span>CU Boulder: Poli-Sci &amp; Economics, Business minor · cum laude (3.75 GPA)</span></li>
               <li><b>›</b> <span>Studied international economics in Madrid (Universidad Carlos III)</span></li>
-              <li><b>›</b> <span>Stack: Supabase · Stripe · Vercel · Agentic AI · RStudio</span></li>
+              <li><b>›</b> <span>Stack: Supabase · Postgres · Expo · Stripe · Vercel · Claude Code · RStudio</span></li>
               <li><b>›</b> <span>Open to roles across my areas of experience</span></li>
             </ul>
           </aside>
@@ -79,6 +83,19 @@
           <p>Each one is framed around the problem, my role, what I shipped, and the outcome.</p>
         </div>
         <div class="projects-grid">
+          <!-- next4 -->
+          <a class="pcard pcard--wide reveal" href="projects/next4.html">
+            <span class="pcard__tag">Co-founder · Live on the App Store</span>
+            <h3>next4</h3>
+            <p>A college-matching app for high school students. A student sorts 86 preference cards; a deterministic engine ranks 6,271 real schools against 145,000+ federal facts and shows which of their own answers put each one there. No language model ever touches a school statistic. I also designed the agent-run marketing organization behind it.</p>
+            <div class="pcard__meta">
+              <span class="chip">0→1 · iOS</span>
+              <span class="chip">Data &amp; match engine</span>
+              <span class="chip">Agentic marketing</span>
+            </div>
+            <span class="pcard__link">Read the case study <span class="arrow">→</span></span>
+          </a>
+
           <!-- Hirely -->
           <a class="pcard reveal" href="projects/hirely.html">
             <span class="pcard__tag">Solo founder · Built &amp; shipped</span>
@@ -108,6 +125,34 @@
       </div>
     </section>
 
+    <!-- Agent systems -->
+    <section class="section" id="agents">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="section__kicker">How I work</p>
+          <h2>Building with agents, as a system.</h2>
+          <p>Getting an AI agent to produce something is easy and mostly worthless. The work is in the structure around it — what it's allowed to claim, what checks it, and what happens when it's confidently wrong. Here's how I've built that across next4 and Hirely.</p>
+        </div>
+        <div class="agents">
+          <article class="acard reveal">
+            <span class="acard__i">01 — Distribution</span>
+            <h3>An agent-run marketing org</h3>
+            <p>next4's marketing has no team. A structured datastore holds seven content pillars, six channels, and the weekly schedule; agents run a Monday research scrape and email me each day's posts with full scripts and the assets to prepare. It produces <strong>14 posts a week</strong>, and I work from the email, never from a dashboard.</p>
+          </article>
+          <article class="acard reveal">
+            <span class="acard__i">02 — Guardrails</span>
+            <h3>Rules that can kill a post</h3>
+            <p>Twelve non-negotiables sit between a draft and a channel: never a chance percentage, never an unsourced school statistic, no identifying information about minors, verify every deadline against the official source. A finished "ChatGPT hallucinated this" video was <strong>cut after verification proved it hadn't</strong> — the replacement was both true and a better argument.</p>
+          </article>
+          <article class="acard reveal">
+            <span class="acard__i">03 — Engineering</span>
+            <h3>Spec, plan, build, adversarial review</h3>
+            <p>I build through Claude Code in a fixed loop: written spec, task plan, subagent execution with the test written first, then a separate review pass whose only job is to find what the builder missed. It has caught a scoring measure that was quietly tracking family wealth, and a bug that passed its own unit test.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <!-- Experience -->
     <section class="section" id="experience">
       <div class="container">
@@ -116,6 +161,14 @@
           <h2>Where I've built and led.</h2>
         </div>
         <div class="timeline">
+          <div class="trow reveal">
+            <div class="trow__when">Jul 2026 – Present</div>
+            <div class="trow__what">
+              <h3>Co-founder · <span class="grad">next4</span></h3>
+              <p class="trow__where">Boulder, CO</p>
+              <p>Co-founded a college-matching iOS app, shipped to the App Store in September 2026. Sourced and modeled a knowledge base of 6,271 institutions and 145,000+ facts from IPEDS, College Scorecard, the Common Data Set, Carnegie classifications, and BEA price data, then drove the deterministic match engine and Expo app through Claude Code with spec-first, test-driven subagent workflows. Ran demand validation across 1,226 coded Reddit comments before committing to the build. Designed and operate the AI marketing organization that produces 14 posts a week across six channels. <a href="projects/next4.html" style="color:var(--accent-2)">See case study →</a></p>
+            </div>
+          </div>
           <div class="trow reveal">
             <div class="trow__when">Apr 2026 – Present</div>
             <div class="trow__what">
@@ -177,6 +230,7 @@
         <div class="contact__links">
           <a class="btn btn--primary" href="mailto:griffinrterry@gmail.com">Email me</a>
           <a class="btn btn--ghost" href="https://www.linkedin.com/in/griffin-terry-2123aa252" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn btn--ghost" href="https://apps.apple.com/app/id6806343171" target="_blank" rel="noopener">next4 ↗</a>
           <a class="btn btn--ghost" href="https://www.hirelyapply.com" target="_blank" rel="noopener">Hirely ↗</a>
         </div>
       </div>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>next4: Case Study · Griffin Terry</title>
+  <meta name="description" content="next4: a college-matching iOS app built on a 6,271-school federal knowledge base with a deterministic match engine, plus the AI marketing organization I designed to run its distribution. Case study by Griffin Terry." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <!-- Nav -->
+  <header class="nav">
+    <div class="container nav__inner">
+      <a href="../index.html" class="brand">Griffin<span>.</span>Terry</a>
+      <nav class="nav__links">
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#work">Work</a>
+        <a href="../index.html#agents">Agent systems</a>
+        <a href="../index.html#contact">Contact</a>
+        <a href="../index.html#contact" class="nav__cta">Get in touch</a>
+      </nav>
+      <button class="nav__toggle" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Case hero -->
+    <section class="case-hero">
+      <div class="container">
+        <a href="../index.html#work" class="backlink">← Back to work</a>
+        <img class="case-logo reveal" src="../assets/next4/next4-logo.png" alt="next4" onload="var h=document.getElementById('next4-h1'); if(h) h.style.display='none'" onerror="this.style.display='none'" />
+        <h1 id="next4-h1" class="reveal">next4</h1>
+        <p class="lead reveal">A college-matching app for high school students, built on a knowledge base of <strong>6,271 institutions and 145,000+ facts</strong> sourced entirely from federal data. A student sorts 86 preference cards; the app returns a ranked list of real schools and shows, per school, exactly which of their own answers put it there. The ranking is computed, not generated, so a language model can never invent a school statistic.</p>
+        <div class="case-meta reveal">
+          <div><span>Role</span><b>Co-founder: Product, Data &amp; Marketing</b></div>
+          <div><span>Type</span><b>0→1 Consumer EdTech · iOS</b></div>
+          <div><span>Timeline</span><b>Jul 2026 – Present</b></div>
+          <div><span>Live</span><b><a href="https://apps.apple.com/app/id6806343171" target="_blank" rel="noopener" style="color:var(--accent-2)">App Store ↗</a></b></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="case-body">
+      <div class="container">
+
+        <!-- Problem -->
+        <section class="case-section reveal">
+          <h2>The problem</h2>
+          <p><strong>The college search runs backwards.</strong> A student takes a standardized test, checks a box, and their information goes onto a list that colleges buy access to. Then several hundred brochures arrive. Those are schools that bought their demographic, not schools that fit them.</p>
+          <p>The tools meant to fix this mostly have the same problem underneath. Many of the free ones are paid by colleges rather than by families, which makes "who fits you" and "who is paying us" the same question. And the tool most students actually use is ChatGPT, which will confidently assemble a college list out of whatever it finds on school marketing pages, with no way for a 17-year-old to catch a number that's wrong.</p>
+          <p>I ran a demand study before we committed to building anything: <strong>1,226 Reddit comments across 39 threads, coded and adversarially verified</strong>. It found that the funded competitors had close to zero organic mindshare. The things students actually named as their alternatives were ChatGPT, free guides, and expensive consultants they didn't trust. That reframed the whole opportunity: the competition wasn't a startup, it was a general-purpose chatbot that can't compare anything.</p>
+        </section>
+
+        <!-- Insight -->
+        <section class="case-section reveal">
+          <h2>The insight &amp; the wedge</h2>
+          <p>Two mechanisms, in this order.</p>
+          <p><strong>The card sort is the instrument.</strong> Sorting 86 cards into five buckets pulls out preferences a student cannot articulate into a search form. Nobody types "I want a mid-size school in a college town with strong research access and low cost of living" into a filter. But they will tell you, one card at a time, and that's what they remember doing.</p>
+          <p><strong>The ranking is deterministic and fact-backed.</strong> Matching runs against federal data with no language model anywhere in the critical path. Must-haves and dealbreakers become database filters; everything else scores. That's what makes the sort's output trustworthy instead of merely fun.</p>
+          <div class="callout">
+            <b>The structural point behind the positioning:</b> the free competitors are paid by colleges, so their incentive is placement. next4 is paid by families, so its only incentive is fit. That's a fact about business models, not a marketing claim, and it reframes every competitor's core feature as a conflict of interest.
+          </div>
+          <p>Neither half stands alone. Aggregators rank on opaque proprietary scores and have no comparable instrument. A quiz without the engine behind it couldn't defend its own output.</p>
+        </section>
+
+        <!-- What I built -->
+        <section class="case-section reveal">
+          <h2>What I built</h2>
+          <p>I co-founded next4 and work across product definition, the data layer, the build, and all of marketing. We started with the database rather than the interface, which is the decision everything else follows from.</p>
+          <div class="stats">
+            <div class="stat"><b>6,271</b><span>institutions in the knowledge base</span></div>
+            <div class="stat"><b>145,000+</b><span>facts, every one traced to a federal source</span></div>
+            <div class="stat"><b>86</b><span>preference cards across six categories</span></div>
+          </div>
+
+          <h3>The knowledge base</h3>
+          <p>I sourced and modeled the institution data: <strong>IPEDS, College Scorecard, the Common Data Set, Carnegie classifications, and BEA regional price parities</strong>. Each field carries provenance, so any number in the app can be traced back to the dataset and release it came from. A provenance ratchet detects changes on re-ingest rather than silently overwriting.</p>
+          <p>Getting the derived measures right was the slow part, and the failures were instructive. An early "academic vs. social" axis was built as a single scale running from <em>academically focused</em> to <em>party school</em> — which quietly encoded the assumption that a school can't be both. Splitting it into two independent indexes showed the two correlate at <strong>+0.42, not −1</strong>, with 122 schools in the top quintile of both. The original model wasn't just imprecise; it was describing a world that doesn't exist.</p>
+          <p>A later audit caught something sharper: one candidate academic measure correlated <strong>−0.55 with Pell share</strong>, meaning it was substantially tracking student wealth. We drove the card off a different sub-score rather than ship a proxy for family income as a measure of academic quality.</p>
+          <p>The most recent addition is <strong>program-level earnings</strong> — 69,948 bachelor-level rows from College Scorecard Field of Study — so "what do this school's graduates in this major actually earn" became answerable. Privacy-suppressed rows are loaded as suppressed rather than missing, so "we can't report this" can never be read by the app as "this program doesn't exist."</p>
+
+          <h3>The match engine and the app</h3>
+          <p>Matching is a deterministic computation over the knowledge base. Must-haves become hard filters; when filters over-constrain the pool, an auto-relax loop demotes the lowest-priority ones instead of returning an empty list. Results are instant because there is nothing to generate.</p>
+          <p><strong>Explainability is a product guarantee, not a feature.</strong> Every result carries the student's own matched cards, grouped the way they sorted them, computed from the same evaluation that produced the score — so the explanation and the ranking can never disagree. A language model runs exactly once, after a student saves a school, to write the "why and next steps" prose. It never touches a number.</p>
+          <div class="pcard__meta" style="margin-bottom:6px">
+            <span class="chip">Expo / React Native</span>
+            <span class="chip">Supabase · Postgres</span>
+            <span class="chip">TypeScript monorepo</span>
+            <span class="chip">Vercel</span>
+            <span class="chip">Claude Code</span>
+          </div>
+        </section>
+
+        <!-- Screenshots -->
+        <section class="case-section reveal">
+          <h2>The product</h2>
+          <p>Shipped to the App Store on September 2, 2026:</p>
+          <div class="shots shots--phone">
+            <figure class="shot">
+              <img src="../assets/next4/app/04-home.png" alt="next4 home screen" loading="lazy" onerror="this.remove();this.closest('.shot').classList.add('shot--empty')" />
+              <figcaption>Home: the entry point into intake and the card sort.</figcaption>
+            </figure>
+            <figure class="shot">
+              <img src="../assets/next4/app/05-priorities.png" alt="Priority ranking screen with six categories" loading="lazy" onerror="this.remove();this.closest('.shot').classList.add('shot--empty')" />
+              <figcaption>Priorities: rank the six categories before sorting. This weights the sort — but the student's actual card choices still come first, and the screen can be skipped.</figcaption>
+            </figure>
+            <figure class="shot">
+              <img src="../assets/next4/app/02-sort.png" alt="Card sort screen, card 74 of 86" loading="lazy" onerror="this.remove();this.closest('.shot').classList.add('shot--empty')" />
+              <figcaption>The sort: 86 cards into five buckets, from Not For Me to Must Have. Must Have is capped at 7, so the constraint forces a real ranking instead of a wish list.</figcaption>
+            </figure>
+            <figure class="shot">
+              <img src="../assets/next4/app/01-matches.png" alt="Ranked match results with fit scores" loading="lazy" onerror="this.remove();this.closest('.shot').classList.add('shot--empty')" />
+              <figcaption>Results: ranked schools with a fit score, reach/target/likely shape, net price, size, and program share — all real figures from the knowledge base.</figcaption>
+            </figure>
+            <figure class="shot">
+              <img src="../assets/next4/app/06-why-match.png" alt="Why this is a match, showing matched must-haves" loading="lazy" onerror="this.remove();this.closest('.shot').classList.add('shot--empty')" />
+              <figcaption>"Why this is a match": the student's own must-haves and wants, ticked off by name. The explanation is generated from the same computation as the score.</figcaption>
+            </figure>
+            <figure class="shot">
+              <img src="../assets/next4/app/03-results-profile.png" alt="School detail view" loading="lazy" onerror="this.remove();this.closest('.shot').classList.add('shot--empty')" />
+              <figcaption>School detail: the full fact set for one institution, with the next concrete step for that student.</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <!-- What we didn't build -->
+        <section class="case-section reveal">
+          <h2>Two things we decided not to build</h2>
+          <p>Both were features users asked for. Both were cut on purpose, and the reasoning matters more than the features did.</p>
+          <p><strong>No admission-chance percentage.</strong> Chancing was simultaneously the most-wanted and the least-trusted feature in the category — our own research found students asking for it and disbelieving it in the same thread. We built the screen, looked at it, and took the number out. "12%" makes a student drop a school and "80%" makes them stop trying, and neither one is information. The app shows a range and the specific next step instead.</p>
+          <p><strong>No AI essay writing.</strong> Feedback and coaching only, student authorship preserved and visibly disclosed. This is the objection every parent and counselor raises first, and it's a commitment rather than a positioning choice — which is why the marketing rules below forbid softening it even to "helps you write."</p>
+          <div class="callout">
+            <b>An audit that changed shipped data:</b> preparing Apple's review questions, I found ten rows sourced from a publisher our exclusion policy didn't cover, feeding a score the app actually reads. Fixing it meant reverse-engineering the original scoring formula from the data — the build script hadn't survived — verifying it reproduced all 259 rated schools exactly, then re-deriving the affected schools. The migration asserts its own post-state inside the transaction and rolls back if any school crosses the card's threshold, so the change was provably local. It's the least glamorous work on this page and the piece I'd point at first.
+          </div>
+        </section>
+
+        <!-- THE MARKETING ORG -->
+        <section class="case-section reveal">
+          <h2>The AI marketing organization</h2>
+          <p>next4 has no marketing team. It has a system I designed that does what a marketing team does, run by Claude agents against a structured datastore, and it produces <strong>14 posts a week across six channels</strong> without me writing them.</p>
+          <p>The design problem wasn't "generate content." Generating content is easy and mostly worthless. The problem was that this product markets to minors about a six-figure decision, on claims that must be factually defensible, in a category where one invented statistic destroys the entire argument. So the system is built as an organization: a strategy layer, an execution loop, and a compliance layer that can stop a post.</p>
+
+          <h3>How the week runs</h3>
+          <div class="flow">
+            <div class="flow__step">
+              <b>1</b>
+              <div>
+                <h4>Monday, 7:00am — the research run</h4>
+                <p>An agent scrapes the TikTok and Instagram accounts and hashtags listed in the workbook's seed list, summarizes what's moving in the category, appends the findings to a trends log that is never overwritten, and emails me the whole week at a glance. The seed list is a spreadsheet tab, not hardcoded, so changing what gets watched is an edit rather than a code change.</p>
+              </div>
+            </div>
+            <div class="flow__step">
+              <b>2</b>
+              <div>
+                <h4>Tuesday–Friday, 7:00am — the daily dispatch</h4>
+                <p>One email per day containing only that day's posts: channel, account, format, the full script or copy, the asset needed, and the CTA. I post it. There's no dashboard to check and no backlog to triage.</p>
+              </div>
+            </div>
+            <div class="flow__step">
+              <b>3</b>
+              <div>
+                <h4>The heads-up section</h4>
+                <p>Each email flags what tomorrow needs filmed or designed today. This is the part that makes the system survive a busy week — the failure mode of any content calendar is arriving at a post with no asset for it.</p>
+              </div>
+            </div>
+            <div class="flow__step">
+              <b>4</b>
+              <div>
+                <h4>The workbook is the datastore, not the interface</h4>
+                <p>Weekly schedules, the engagement queue, curated campus photos, the seed list, the trends log, pillars, channels, rules, backlog, and a tracker that rolls up posted counts. I open it to change strategy, not to work. The operating instruction at the top of it is literally "you work from email, not from this file."</p>
+              </div>
+            </div>
+          </div>
+
+          <h3>The strategy layer</h3>
+          <p>Seven content pillars, each with a defined argument, its channels, example hooks, and its own guardrails. A few of them:</p>
+          <div class="grid-cards">
+            <div class="gcard">
+              <span>Pillar 1</span>
+              <h4>Matched, not recruited</h4>
+              <p>The free competitors are paid by colleges; next4 is paid by families. The wedge. Guardrail: stay categorical in short-form video — name a competitor only where the receipt can be linked in the same post.</p>
+            </div>
+            <div class="gcard">
+              <span>Pillar 2</span>
+              <h4>The receipts</h4>
+              <p>Real sourced numbers on real schools: net price by income band, graduation rate, earnings by major. Proves the knowledge base exists. Guardrail: every figure from the KB or a named federal source, screenshotted before filming.</p>
+            </div>
+            <div class="gcard">
+              <span>Pillar 3</span>
+              <h4>Chancing, refused</h4>
+              <p>We built the percentage, looked at it, and deleted it. Refusing to fake precision is a trust play competitors structurally can't copy. Guardrail: never attach a percentage to a next4 output — including in mockups.</p>
+            </div>
+            <div class="gcard">
+              <span>Pillar 5</span>
+              <h4>Versus ChatGPT</h4>
+              <p>Nearly every student in the target already uses it for this. Guardrail: be genuinely fair about what ChatGPT is good at — the generous comparison is what makes the critical part land.</p>
+            </div>
+          </div>
+          <p>Six channels, each with its own job, cadence, voice, and rules — TikTok and Instagram to reach students, LinkedIn to reach the people who actually pay, X/Threads for founder voice, Facebook groups to meet parents where they already ask questions. The channel rules encode things that are only learnable by getting them wrong: LinkedIn suppresses posts with outbound links, so the link goes in the first comment. Instagram Reels must be exported natively rather than saved from TikTok, or the watermark gets the post suppressed. Facebook parent groups ban business pages, so those posts come from a personal profile — <em>with</em> a disclosure line, because a personal profile without one is astroturfing.</p>
+
+          <h3>The compliance layer</h3>
+          <p>Twelve non-negotiables, each written as a rule, a reason, and a question to check the post against before it goes out. This is the part that makes the system safe to run at speed:</p>
+          <div class="rules">
+            <div class="rule"><b>Admission chances</b><span>Ranges plus concrete next steps. Never a percentage — not in copy, not in an on-screen mockup.</span></div>
+            <div class="rule"><b>Essay coaching</b><span>Feedback only. Never soften to "helps you write." Demo text must be fabricated, never a real student's essay.</span></div>
+            <div class="rule"><b>AI-usage detection</b><span>Never claim or imply it. The feature was cut for bias against non-native speakers and legal risk.</span></div>
+            <div class="rule"><b>School facts</b><span>Every statistic from the knowledge base or a named federal source. Never invent, estimate, or round for the edit.</span></div>
+            <div class="rule"><b>PII on minors</b><span>No identifying information about minors, ever. No real student essays, even with permission.</span></div>
+            <div class="rule"><b>Seasonal dates</b><span>Verify Common App, ED/EA, FAFSA and CSS dates against the official source every time. A wrong deadline in a post about deadlines is the worst possible error.</span></div>
+            <div class="rule"><b>Generated imagery</b><span>AI images may be generic backgrounds only. Never a photo-real invented depiction of a named campus — that's the same failure as a fabricated statistic.</span></div>
+            <div class="rule"><b>Photo licensing</b><span>Campus photos come from Wikimedia Commons with the credit line kept on the rendered slide.</span></div>
+            <div class="rule"><b>Account framing</b><span>The engagement account's rankings are opinion and must look like opinion — badge on the cover, outro slide, no scores.</span></div>
+            <div class="rule"><b>Competitor naming</b><span>Categorical in short-form video; named only where the sourcing is one click away in the same post. A 30-second video is a bad place to defend a named claim.</span></div>
+            <div class="rule"><b>Facebook disclosure</b><span>Group posts go out from a founder's real personal profile, never the company page, and always carry the line disclosing that the author co-founded a college app. A personal profile without it is astroturfing.</span></div>
+            <div class="rule"><b>Founder on camera</b><span>At least one founder talking-head per week. A floor, not a target — it's the first thing that gets skipped in a busy week, so it's a rule.</span></div>
+          </div>
+
+          <div class="callout">
+            <b>The gate working, in practice.</b> A scripted TikTok for the "versus ChatGPT" pillar opened with the line <em>"It made up a number in the first thirty seconds."</em> Before filming, the verification step re-ran the prompt and audited every figure ChatGPT had returned against College Scorecard. It hadn't hallucinated — four of five enrollment numbers matched, and the fifth was hedged with a tilde. <strong>The post was killed.</strong><br /><br />
+            What replaced it was a better story that was also true: ChatGPT had returned five financial-aid figures pulled from five different school marketing pages, using five different definitions, stacked in one column as if comparable — and footnoted, unprompted, that they don't compare. At Duquesne it reported $38,766 in average aid, while federal data says the average student there still pays $37,730 a year. Both numbers are real. It handed the student the one that sounds good. The actual argument isn't that ChatGPT is dumb; it's that it can't compare anything.
+          </div>
+          <p>The rewritten brief ships with its receipts attached: the exact prompt used, the audit table, a compliance checklist, every source URL with its retrieval date, and a note to re-verify the figure before posting because the federal dataset refreshes annually. That document is the actual deliverable of the system — not the video.</p>
+
+          <h3>What it produces</h3>
+          <div class="split">
+            <video src="../assets/next4/marketing/next4-essay-coaching.mp4" autoplay muted loop playsinline preload="metadata"></video>
+            <div>
+              <p>Finished, postable assets — vertical video, carousels, long-form launch posts — generated from the week's briefs and rendered from HTML so they're reproducible and correctable rather than one-off exports.</p>
+              <p>The video is the essay-coaching pillar. The carousel below is the seasonal pillar: a seven-slide "8 weeks to Nov 1" deck, built to be useful whether or not anyone downloads the app, because that's what makes a stranger follow the account before the product means anything to them.</p>
+            </div>
+          </div>
+          <div class="strip">
+            <figure><img src="../assets/next4/marketing/next4-W3-24-slide1.png" alt="Carousel slide 1: 8 weeks to Nov 1" loading="lazy" /></figure>
+            <figure><img src="../assets/next4/marketing/next4-W3-24-slide2.png" alt="Carousel slide 2" loading="lazy" /></figure>
+            <figure><img src="../assets/next4/marketing/next4-W3-24-slide3.png" alt="Carousel slide 3" loading="lazy" /></figure>
+            <figure><img src="../assets/next4/marketing/next4-W3-24-slide4.png" alt="Carousel slide 4" loading="lazy" /></figure>
+            <figure><img src="../assets/next4/marketing/next4-W3-24-slide5.png" alt="Carousel slide 5" loading="lazy" /></figure>
+            <figure><img src="../assets/next4/marketing/next4-W3-24-slide6.png" alt="Carousel slide 6" loading="lazy" /></figure>
+            <figure><img src="../assets/next4/marketing/next4-W3-24-slide7.png" alt="Carousel slide 7" loading="lazy" /></figure>
+          </div>
+          <p style="color:var(--muted-2);font-size:0.9rem">Seven-slide carousel, scroll to see the set →</p>
+        </section>
+
+        <!-- How I build -->
+        <section class="case-section reveal">
+          <h2>How I actually build with agents</h2>
+          <p>The same discipline runs on the engineering side. I build through Claude Code, but the leverage isn't in asking for code — it's in the structure around the asking.</p>
+          <ul>
+            <li><strong>Spec before plan, plan before code.</strong> Each phase got a written spec and a task plan before anything was implemented. The specs are artifacts in the repo, not chat history.</li>
+            <li><strong>Subagent-driven execution with test-driven development.</strong> Tasks are dispatched to focused agents that write the test first. The engine and knowledge-base packages carry several hundred tests between them, and they're the reason a data migration can be shipped with confidence.</li>
+            <li><strong>Adversarial review as a separate pass.</strong> A reviewing agent looks for what the building agent missed. It has caught real defects — an eviction bug in list-shaping, a scoring measure that was tracking wealth, a whitespace bug that passed unit tests because the test runner's transform preserved a space the production build dropped.</li>
+            <li><strong>A decision log and session history.</strong> Every decision is written down with its reasoning and date. When a fact stops being true — and several have — the record gets corrected in place rather than quietly diverging from reality.</li>
+          </ul>
+          <p>The honest version: agents make mistakes constantly, and most of them are confident. Two of the most important facts in this case study — the academic/social correlation and the wealth proxy — are things an earlier pass got wrong and a later one caught. The value isn't the generation. It's building the verification step that assumes the generation is wrong.</p>
+        </section>
+
+        <!-- Outcomes -->
+        <section class="case-section reveal">
+          <h2>Where it stands</h2>
+          <p>next4 shipped to the App Store on <strong>September 2, 2026</strong>, with a web version at <a href="https://app.yournext4.com" target="_blank" rel="noopener" style="color:var(--accent-2)">app.yournext4.com</a>. Launch week ran through the marketing system: founder-signed LinkedIn posts, the App Store link in the first comment, sequenced hours apart rather than fired simultaneously.</p>
+          <div class="stats">
+            <div class="stat"><b>6,271</b><span>institutions, five federal data sources</span></div>
+            <div class="stat"><b>14</b><span>posts per week across six channels, agent-produced</span></div>
+            <div class="stat"><b>0</b><span>school statistics written by a language model</span></div>
+          </div>
+          <p>The open problem I'd name first: of the 86 cards, 14 are currently read by nothing in the ranking, and 16 more score only where enrichment exists. Students can currently sort cards that don't move their results. That's a live product problem, it's written down as one, and closing it is the next piece of work — along with a licensing audit across the remaining publisher-derived measures.</p>
+          <p class="placeholder"><b>What I'd want to talk about:</b> the tradeoff between shipping fast and shipping something a 17-year-old can't catch being wrong. We chose the slower build. I think it was right, and I'd argue it either way.</p>
+        </section>
+
+        <section class="case-section reveal" style="text-align:center">
+          <a href="../index.html#work" class="btn btn--ghost">← Back to all work</a>
+          <a href="../index.html#contact" class="btn btn--primary">Get in touch</a>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>© 2026 Griffin Terry</span>
+      <span>next4 · Case study</span>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
