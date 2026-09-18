@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>next4: The Research · Griffin Terry</title>
+<meta name="description" content="The demand, competitive and market research behind next4: 1,226 coded Reddit comments, an 84-person survey, and a six-segment competitive teardown, with the methods and the limits." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,400..600&family=Public+Sans:ital,wght@0,400..700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../record.css" />
+<script>
+  // Applied before paint: a stored choice wins, otherwise the OS decides.
+  try {
+    var t = localStorage.getItem('theme');
+    if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+  } catch (e) {}
+</script>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead__in">
+    <a class="wordmark" href="../index.html">Griffin Terry<i>.</i></a>
+    <div class="masthead__right">
+      <nav>
+        <a href="../index.html#work">Work</a>
+        <a href="../index.html#method">Method</a>
+        <a href="../index.html#record">Record</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+      <button class="themetoggle" type="button" aria-label="Switch to dark theme">
+        <svg class="i-sun" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
+          <circle cx="10" cy="10" r="3.6"/>
+          <path d="M10 1.6v2.2M10 16.2v2.2M18.4 10h-2.2M3.8 10H1.6M15.94 4.06l-1.56 1.56M5.62 14.38l-1.56 1.56M15.94 15.94l-1.56-1.56M5.62 5.62L4.06 4.06"/>
+        </svg>
+        <svg class="i-moon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M16.5 11.75A7 7 0 0 1 8.25 3.5a7 7 0 1 0 8.25 8.25Z"/>
+        </svg>
+      </button>
+      <button class="navtoggle" aria-label="Menu" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 6.5h16M3 11h16M3 15.5h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="case-hero">
+    <div class="container">
+      <a href="next4.html" class="backlink">← Back to the next4 case study</a>
+      <h1>The research behind next4</h1>
+      <p class="lead">Before we wrote a line of the product's code, we spent two months trying to talk ourselves out of building it. This is what that looked like: a qualitative pass over 1,226 coded comments, a fielded survey of 84 parents and students, a six-segment competitive teardown, and a market frame, with the methods, the caveats, and the claims that got thrown out.</p>
+      <div class="case-meta">
+        <div><span>Role</span><b>Design, execution, analysis</b></div>
+        <div><span>Period</span><b>Jul – Aug 2026</b></div>
+        <div><span>Corpus</span><b>1,226 comments · 84 respondents</b></div>
+        <div><span>Status</span><b>Fed the shipped product</b></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="case-body">
+    <div class="container">
+
+      <section class="case-section">
+        <h2>Why any of this happened first</h2>
+        <p>The idea was a five-feature bundle: essay coaching, an AI-writing detector, an admit-chance predictor, interest-based discovery, and a swipe interface. It sounded good, which is the problem. Five features that each sound good is the most common way a product gets built for nobody.</p>
+        <p>So the research had one job: find out which of the five, if any, a real person would choose when choosing costs them something. Three of the five did not survive it.</p>
+        <div class="callout">
+          <b>A note on what's here.</b> Pricing conclusions are deliberately left out of this page. They're live strategy, and the numbers move. Everything else below is reported as it was found, including the parts that contradicted what we wanted to hear.
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>The qualitative pass: 1,226 comments</h2>
+        <p>Surveys tell you how people answer questions. They don't tell you what people say when nobody is asking. So the first pass read applicants talking to each other.</p>
+
+        <h3>Method</h3>
+        <div class="flow">
+          <div class="flow__step"><b>1</b><div>
+            <h4>Sizing</h4>
+            <p>Four keyword passes over twelve months of public Reddit via a read-only scraper, yielding 279 unique threads, 225 of them core-relevant.</p>
+          </div></div>
+          <div class="flow__step"><b>2</b><div>
+            <h4>Depth</h4>
+            <p>The 39 highest-signal threads were pulled to comment level, 1,226 comments in all, and coded on three axes at once: theme, sentiment, and segment, by four coders working in parallel.</p>
+          </div></div>
+          <div class="flow__step"><b>3</b><div>
+            <h4>Adversarial check</h4>
+            <p>Five headline claims were then fact-checked against the corpus by someone trying to break them. <strong>Three held. Two were softened.</strong> One of the two was a conclusion we had already half-committed to.</p>
+          </div></div>
+          <div class="flow__step"><b>4</b><div>
+            <h4>Hygiene</h4>
+            <p>No usernames or personal information stored. Short verbatim quotes with permalinks, nothing more.</p>
+          </div></div>
+        </div>
+        <p><strong>The stated limit, which matters:</strong> Reddit is a vocal, high-achieving, selective-school-fixated minority. Every finding here is a hypothesis for the survey to test. None of it is a market share, and it was never treated as one.</p>
+
+        <h3>The finding that reframed the competition</h3>
+        <p>We went in believing the threat was the funded startups. The corpus said otherwise, by saying nothing about them at all.</p>
+        <div class="tablewrap">
+          <table class="figures">
+            <thead><tr><th>Who students actually named</th><th>Mentions</th><th>Sentiment</th></tr></thead>
+            <tbody>
+              <tr><td class="rowlabel">ChatGPT / general LLMs</td><td>157</td><td>Mixed to negative on writing; accepted for brainstorming</td></tr>
+              <tr><td class="rowlabel">Human consultants (generic)</td><td>~137</td><td>Conditional; hourly praised, packages resented</td></tr>
+              <tr><td class="rowlabel">Crimson</td><td>33</td><td>Negative-skewing: overpriced, cookie-cutter</td></tr>
+              <tr><td class="rowlabel">ESAI</td><td>4</td><td>Negative, plus founder self-promotion</td></tr>
+              <tr><td class="rowlabel">CollegeVine</td><td>3</td><td>Neutral; its chancing called "too optimistic"</td></tr>
+              <tr><td class="rowlabel">Kollegio</td><td class="em">0</td><td>One rave, flagged by peers as a fake promo</td></tr>
+              <tr><td class="rowlabel">AdmitYogi</td><td class="em">0</td><td>None</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Only ChatGPT and the human consultants cleared a 25-mention bar. The two companies at the center of our competitive brief could not be scored from organic discussion at all. <strong>That absence was the finding.</strong> It moved the funded one-stops from "the threat" to "a funding and marketing threat," and moved a general-purpose chatbot into the position of the real default competitor.</p>
+
+        <h3>What people actually wanted, in order</h3>
+        <ul>
+          <li><strong>College list, matching, discovery, fit</strong> — the strongest theme by a distance.</li>
+          <li><strong>Tracking and deadline planning</strong> — spreadsheets, whiteboards, and dread.</li>
+          <li><strong>Financial aid, merit and real cost.</strong></li>
+          <li><strong>Chancing</strong> — sought and distrusted in the same breath. "No chance calculator is accurate."</li>
+          <li><strong>Essay feedback</strong> — concentrated among students without counselor access.</li>
+        </ul>
+        <p>Nobody asked for an all-in-one app by name. The pain of fragmentation was everywhere; the concept that solves it was nowhere. That means the integrated product has to be <em>sold</em>, not assumed, which is a harder go-to-market than we had been planning for.</p>
+      </section>
+
+      <section class="case-section">
+        <h2>The survey: 84 people, and one question that did the work</h2>
+        <p>The qualitative pass produced hypotheses. The survey tested them against people who weren't self-selected into a forum.</p>
+        <p><strong>n = 69 parents, 15 students</strong>, fielded August 2026. Scored against a rubric written <em>before</em> the data came in, with pre-registered thresholds and a 50% discount applied to stated intent. It's a convenience sample measuring stated intent, not revealed preference. It is directional evidence that sharpens a plan, not a forecast.</p>
+
+        <div class="stats">
+          <div class="stat"><b>87%</b><span>of parents would want their child using it — 40 definitely, 20 probably</span></div>
+          <div class="stat"><b>75%</b><span>kept discovery when forced to keep only one feature</span></div>
+          <div class="stat"><b>93%</b><span>of students would use it, though n=15 is directional only</span></div>
+        </div>
+
+        <h3>The forced choice</h3>
+        <p>Respondents rated every feature, and then were made to keep exactly one. The two results disagree, and the disagreement is the most useful thing the survey produced.</p>
+        <div class="tablewrap">
+          <table class="figures">
+            <thead><tr><th>Feature</th><th>Kept as the only one</th><th>Rated value (1–5)</th></tr></thead>
+            <tbody>
+              <tr><td class="rowlabel">Browse colleges, build a shortlist</td><td>28</td><td>3.96</td></tr>
+              <tr><td class="rowlabel">Quiz that learns interests, suggests fits</td><td>24</td><td>3.52</td></tr>
+              <tr><td class="rowlabel">AI feedback on essay drafts</td><td>6</td><td>3.96</td></tr>
+              <tr><td class="rowlabel">AI essay brainstorming</td><td>5</td><td>3.94</td></tr>
+              <tr><td class="rowlabel">Deadline / requirement dashboard</td><td>3</td><td>4.18</td></tr>
+              <tr><td class="rowlabel">Admission-chance ranges + steps</td><td>3</td><td>4.19</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="callout">
+          <b>Read the two columns against each other.</b> Chancing and the deadline dashboard rate <em>highest</em> and get picked <em>last</em>. Everything sounds valuable when rating costs you nothing; only the forced choice makes the respondent give something up. We built for the choice, so discovery leads the product, and kept the high-rating, low-pick features as retention rather than acquisition. That is the classic signature of a feature people like having and would never switch for.
+        </div>
+        <p>The 52 of 69 who kept discovery are the reason next4's front door is a card sort and not an essay tool. Essay tooling, the thing the entire competitive set is racing to build, took <strong>11 votes out of 69 combined.</strong></p>
+
+        <h3>The positioning gate</h3>
+        <p>We asked parents directly about AI and essays, because the answer determined whether the product was viable at all:</p>
+        <ul>
+          <li><strong>61% (42):</strong> fine for brainstorming and feedback, as long as my child does all the actual writing.</li>
+          <li><strong>30% (21):</strong> AI should stay away from college essays entirely.</li>
+          <li><strong>5 respondents</strong> would allow drafting.</li>
+        </ul>
+        <p>The feedback-never-writing posture passed. But the 30% hard-no is a real constituency, and it changed a product decision: <strong>preserving student authorship isn't enough if it's invisible.</strong> It has to be visibly disclosed in the interface, which is a trust-design requirement rather than a copy problem.</p>
+
+        <h3>Who actually buys</h3>
+        <p><strong>61% of parents</strong> described the same motion: "my child finds it and asks; I decide whether to pay." Among students, 80% said a parent's money is involved. So acquisition is student-facing and conversion is parent-facing: two different audiences, two different surfaces, one funnel.</p>
+
+        <div class="callout">
+          <b>A finding we logged against ourselves.</b> Students' single most-wanted feature was swiping. It beat essay feedback more than two to one. We had already replaced the results-swipe with a plain list days earlier. n=15 is thin and the sorting game does similar work, but the note went into the record as a deliberate decision to revisit rather than a result we quietly ignored.
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>The competitive teardown</h2>
+        <p>Run as a fan-out research harness rather than a reading list, so the claims could be checked rather than collected.</p>
+        <div class="stats">
+          <div class="stat"><b>85</b><span>claims extracted across 5 search angles and 17 sources</span></div>
+          <div class="stat"><b>25</b><span>adversarially verified — 16 confirmed, 2 refuted, 7 re-fetched live</span></div>
+          <div class="stat"><b>6</b><span>segments the market actually divides into</span></div>
+        </div>
+
+        <div class="tablewrap">
+          <table class="figures">
+            <thead><tr><th>Segment</th><th>Players</th><th>What it meant for us</th></tr></thead>
+            <tbody>
+              <tr><td class="rowlabel">Free AI one-stops</td><td>Kollegio</td><td>The direct substitute, and a $0 anchor</td></tr>
+              <tr><td class="rowlabel">Paid essay / coaching</td><td>AdmitYogi, ESAI, Sups</td><td>Feedback-not-writing is table stakes, not a wedge</td></tr>
+              <tr><td class="rowlabel">Free discovery &amp; social</td><td>Appily, Niche, ZeeMee</td><td>Discovery and chancing are worth $0 standalone</td></tr>
+              <tr><td class="rowlabel">School-side B2B</td><td>Scoir, Naviance</td><td>Chancing already reaches students free, via schools</td></tr>
+              <tr><td class="rowlabel">Human consulting</td><td>Crimson, Prompt, Empowerly</td><td>The price umbrella we're productizing beneath</td></tr>
+              <tr><td class="rowlabel">General LLMs</td><td>ChatGPT, Claude, Gemini</td><td>The substitution floor, and the real competitor</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>The frame that changed the pitch</h3>
+        <p>The scariest-looking competitors are free because <strong>colleges are their customer, not students.</strong> Kollegio's business pays out when a student engages and is delivered into an institution's CRM; its matching metrics are self-reported enrollment lift for colleges, not fit accuracy for students. CollegeVine has completed the same pivot, and student access there is free because institutions pay.</p>
+        <p>That reframes a price gap as a <em>structural misalignment</em>, which is durable in a way that being cheaper never is. It's also the origin of next4's sharpest line: a product paid for by families has only one incentive, which is fit.</p>
+        <p>Two honest counterweights we wrote down at the same time. A direct competitor already occupies next4's exact positioning and price band. And the central claim — that next4 matches more accurately — was <strong>asserted, not demonstrated.</strong> A head-to-head test against the incumbents on real student profiles remains the highest-value proof we have not yet run.</p>
+      </section>
+
+      <section class="case-section">
+        <h2>The market frame</h2>
+        <p>Sized top-down, then cut down to something defensible.</p>
+        <div class="tablewrap">
+          <table class="figures">
+            <thead><tr><th></th><th>Figure</th><th>What it is</th></tr></thead>
+            <tbody>
+              <tr><td class="rowlabel">Volume</td><td>~1.5M</td><td>Distinct first-year applicants filing ~10.2M applications, 2024–25</td></tr>
+              <tr><td class="rowlabel">Per applicant</td><td>6.8</td><td>Schools applied to, up 46% in a decade: the complexity driver</td></tr>
+              <tr><td class="rowlabel">TAM</td><td>~$3.4B</td><td>Core admissions consulting, flat at ~1% growth</td></tr>
+              <tr><td class="rowlabel">Adjacent</td><td>~$40B</td><td>Test prep and online tutoring, growing ~11%</td></tr>
+              <tr><td class="rowlabel">SAM</td><td>~$90–180M</td><td>The "missing middle": 400k&ndash;800k households priced out, not uninterested</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>The number that reframed the opportunity is the SAM. Paid counseling concentrates among wealthy families <strong>because of price, not because demand stops.</strong> That makes this market expansion rather than share capture, which is a different and better story, and a harder one, because it means the buyers have never paid for anything in this category before.</p>
+
+        <div class="callout">
+          <b>The discipline that makes the rest trustworthy.</b> The research log keeps an explicit list of claims that <em>failed</em> verification and must not be reused — an oft-quoted $2.9B market figure, "26% of students hire a consultant," a $4,000&ndash;$12,000 average family spend, a competitor's traction numbers, and a finding about admission-model instability that turned out to be broader than the version we liked. Every one of those would have made the pitch stronger. None of them survived checking.
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>What the research actually changed</h2>
+        <ul>
+          <li><strong>The chance predictor was cut.</strong> Most-wanted and least-trusted in the same corpus, and statistically unstable in the literature. We built the screen, looked at the number, and deleted it.</li>
+          <li><strong>The AI-writing detector was cut.</strong> Not because detectors misfire often. The best 2026 tools are under 1% false-positive, and the corpus contained the study that says so. Because the harm they do is silent, unappealable, and lands on non-native speakers.</li>
+          <li><strong>Discovery became the front door,</strong> against our own instinct to lead with essays.</li>
+          <li><strong>Authorship disclosure became visible in the UI,</strong> because 30% of parents needed to see it, not be told it.</li>
+          <li><strong>The competitive story was rewritten</strong> around structural alignment instead of feature breadth.</li>
+          <li><strong>Acquisition and conversion were split</strong> across two audiences once the buyer motion was clear.</li>
+        </ul>
+      </section>
+
+      <section class="case-section">
+        <h2>What it doesn't answer</h2>
+        <p>Stated intent is not a credit card. The survey can tell you 87% of parents like the idea; it cannot tell you what fraction will pay, or stay. Reddit can tell you what a vocal minority argues about; it cannot tell you what a median applicant in Ohio does in October.</p>
+        <p>Three things remain genuinely open: real paid conversion, retention across a full application season, and whether the matching is actually more accurate than the incumbents. That is the one claim the whole product rests on, and the one the research never proved. Only the shipped app answers any of them, which is why it shipped.</p>
+        <p class="placeholder"><b>The through-line:</b> every one of these passes was designed so it could come back negative, and two of them did. That's the only reason the ones that came back positive are worth anything.</p>
+      </section>
+
+      <section class="case-section" style="text-align:center">
+        <a href="next4.html" class="btn btn--ghost">← Back to the case study</a>
+        <a href="../index.html#contact" class="btn btn--primary">Get in touch</a>
+      </section>
+
+    </div>
+  </div>
+</main>
+
+<footer class="colophon">
+  <div class="wrap colophon__in">
+    <span>© 2026 Griffin Terry</span>
+    <span>next4 · Research</span>
+  </div>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>

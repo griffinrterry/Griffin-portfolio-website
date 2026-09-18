@@ -33,8 +33,9 @@ honesty under pressure to overclaim, in both the products and the marketing.
 
 ## Operating Context
 
-Four pages: a homepage (hero, about, work, agent systems, experience, contact) and three
-case studies (next4, Hirely, CoPilot). A research sub-page for next4 is planned. Visitors
+Five pages: a homepage (hero, about, work, agent systems, experience, contact), three
+case studies (next4, Hirely, CoPilot), and a research sub-page under the next4 case study
+carrying the demand, competitive and market work in full. Visitors
 arrive at the homepage or deep-link straight to a case study from an application. A
 résumé PDF download and an email CTA are the conversion actions.
 
