@@ -7,21 +7,41 @@
   <meta name="description" content="CoPilot: an on-demand two-driver rideshare that gets you and your car home safely. Case study by Griffin Terry, Head of Growth & Finance." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,400..600&family=Public+Sans:ital,wght@0,400..700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../record.css" />
+<script>
+  // Applied before paint: a stored choice wins, otherwise the OS decides.
+  try {
+    var t = localStorage.getItem('theme');
+    if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+  } catch (e) {}
+</script>
 </head>
 <body>
   <!-- Nav -->
-  <header class="nav">
-    <div class="container nav__inner">
-      <a href="../index.html" class="brand">Griffin<span>.</span>Terry</a>
-      <nav class="nav__links">
-        <a href="../index.html#about">About</a>
-        <a href="../index.html#work">Work</a>
-        <a href="../index.html#contact">Contact</a>
-        <a href="../index.html#contact" class="nav__cta">Get in touch</a>
-      </nav>
-      <button class="nav__toggle" aria-label="Menu">☰</button>
+  <header class="masthead">
+    <div class="masthead__in">
+      <a class="wordmark" href="../index.html">Griffin Terry<i>.</i></a>
+      <div class="masthead__right">
+        <nav>
+          <a href="../index.html#work">Work</a>
+          <a href="../index.html#method">Method</a>
+          <a href="../index.html#record">Record</a>
+          <a href="../index.html#contact">Contact</a>
+        </nav>
+        <button class="themetoggle" type="button" aria-label="Switch to dark theme">
+          <svg class="i-sun" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
+            <circle cx="10" cy="10" r="3.6"/>
+            <path d="M10 1.6v2.2M10 16.2v2.2M18.4 10h-2.2M3.8 10H1.6M15.94 4.06l-1.56 1.56M5.62 14.38l-1.56 1.56M15.94 15.94l-1.56-1.56M5.62 5.62L4.06 4.06"/>
+          </svg>
+          <svg class="i-moon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M16.5 11.75A7 7 0 0 1 8.25 3.5a7 7 0 1 0 8.25 8.25Z"/>
+          </svg>
+        </button>
+        <button class="navtoggle" aria-label="Menu" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 6.5h16M3 11h16M3 15.5h16"/></svg>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -30,9 +50,9 @@
     <section class="case-hero">
       <div class="container">
         <a href="../index.html#work" class="backlink">← Back to work</a>
-        <h1 class="reveal">CoPilot</h1>
-        <p class="lead reveal">An on-demand transportation service built on a two-driver model: when you've been drinking, CoPilot gets <em>both you and your car</em> home safely, which solves the gap that Uber and Lyft leave behind.</p>
-        <div class="case-meta reveal">
+        <h1>CoPilot</h1>
+        <p class="lead">An on-demand transportation service built on a two-driver model: when you've been drinking, CoPilot gets <em>both you and your car</em> home safely, which solves the gap that Uber and Lyft leave behind.</p>
+        <div class="case-meta">
           <div><span>Role</span><b>Director of Growth &amp; Finance</b></div>
           <div><span>Type</span><b>Mobility / Marketplace startup</b></div>
           <div><span>Result</span><b>Tied 1st of 12 teams</b></div>
@@ -45,7 +65,7 @@
       <div class="container">
 
         <!-- Problem -->
-        <section class="case-section reveal">
+        <section class="case-section">
           <h2>The problem</h2>
           <p>In car-dependent cities like Denver, young professionals drive themselves to bars, concerts, and sporting events. It's convenient at the start of the night and a problem at the end. Once alcohol or fatigue is a factor, every option is bad:</p>
           <ul>
@@ -57,7 +77,7 @@
         </section>
 
         <!-- Solution -->
-        <section class="case-section reveal">
+        <section class="case-section">
           <h2>The solution</h2>
           <p>CoPilot dispatches <strong>two trained drivers in one vehicle</strong>. One driver takes the wheel of the customer's car and drives them home; the second follows in the CoPilot vehicle to pick up their partner afterward. You get home safely, in your own car, and it's there in the morning.</p>
           <p>It's fully on-demand through a mobile app, optimized for <strong>peak hours and dense nightlife zones</strong> to keep wait times low. A planned next step stations drivers <em>at events</em>, so the choice is made for you before the night even ends.</p>
@@ -67,7 +87,7 @@
         </section>
 
         <!-- Customer discovery -->
-        <section class="case-section reveal">
+        <section class="case-section">
           <h2>Customer discovery &amp; the pivot</h2>
           <p>We didn't start with sporting events. The original hypothesis was broad: <strong>young professionals who frequently go out</strong> would value a service that drove their car home. We tested it before building.</p>
           <p>We ran a <strong>Qualtrics survey</strong> across Denver social circles (ages 21–27 who drink), distributed through social media, group chats, and Facebook groups to map ride habits, pain points, and interest. We paired it with three targeted interviews:</p>
@@ -92,7 +112,7 @@
         </section>
 
         <!-- Market -->
-        <section class="case-section reveal">
+        <section class="case-section">
           <h2>Market opportunity</h2>
           <p>Sized top-down from the global rideshare market and narrowed to a beachhead we could realistically win in year one:</p>
           <div class="stats">
@@ -104,8 +124,8 @@
         </section>
 
         <!-- Business model: my area -->
-        <section class="case-section reveal">
-          <h2>Business model &amp; pricing<span style="color:var(--accent-2);font-size:0.7em;font-weight:600;">: my focus area</span></h2>
+        <section class="case-section">
+          <h2>Business model &amp; pricing<span style="color:var(--mark);font-size:0.7em;font-weight:600;">: my focus area</span></h2>
           <p>As <strong>Head of Growth &amp; Finance</strong>, I owned the revenue model, unit economics, and the full five-year financial plan. We chose a deliberately simple <strong>single-stream model</strong> for the first five years. The plan is to charge only for rides and perfect the core product before expanding into anything else.</p>
           <ul>
             <li><strong>$40 base fare + $3/mile</strong>, averaging <strong>~$85 per ride</strong>.</li>
@@ -116,46 +136,46 @@
         </section>
 
         <!-- Financials -->
-        <section class="case-section reveal">
+        <section class="case-section">
           <h2>The financial model</h2>
           <p>I built the five-year model from the unit economics up. Year one is a six-month ramp (app build, hiring, launch by October), which sets up an average <strong>85.5% YoY growth</strong> rate as driver supply, which is the real constraint, scales.</p>
 
-          <div style="overflow-x:auto;margin:6px 0 18px">
-            <table style="width:100%;border-collapse:collapse;min-width:560px;font-size:0.97rem">
+          <div class="tablewrap">
+            <table class="figures">
               <thead>
-                <tr style="text-align:left;color:var(--muted-2);font-size:0.8rem;text-transform:uppercase;letter-spacing:0.06em">
-                  <th style="padding:10px 12px;border-bottom:1px solid var(--line)"></th>
-                  <th style="padding:10px 12px;border-bottom:1px solid var(--line)">Year 1</th>
-                  <th style="padding:10px 12px;border-bottom:1px solid var(--line)">Year 2</th>
-                  <th style="padding:10px 12px;border-bottom:1px solid var(--line)">Year 3</th>
-                  <th style="padding:10px 12px;border-bottom:1px solid var(--line)">Year 4</th>
-                  <th style="padding:10px 12px;border-bottom:1px solid var(--line)">Year 5</th>
+                <tr>
+                  <th></th>
+                  <th>Year 1</th>
+                  <th>Year 2</th>
+                  <th>Year 3</th>
+                  <th>Year 4</th>
+                  <th>Year 5</th>
                 </tr>
               </thead>
-              <tbody style="color:var(--muted)">
+              <tbody>
                 <tr>
-                  <td style="padding:10px 12px;border-bottom:1px solid var(--line);color:var(--text);font-weight:600">Revenue</td>
-                  <td style="padding:10px 12px;border-bottom:1px solid var(--line)">$994.5K</td>
-                  <td style="padding:10px 12px;border-bottom:1px solid var(--line)">$2.24M</td>
-                  <td style="padding:10px 12px;border-bottom:1px solid var(--line)">$3.80M</td>
-                  <td style="padding:10px 12px;border-bottom:1px solid var(--line)">$5.97M</td>
-                  <td style="padding:10px 12px;border-bottom:1px solid var(--line)">$11.35M</td>
+                  <td class="rowlabel">Revenue</td>
+                  <td>$994.5K</td>
+                  <td>$2.24M</td>
+                  <td>$3.80M</td>
+                  <td>$5.97M</td>
+                  <td>$11.35M</td>
                 </tr>
                 <tr>
-                  <td style="padding:10px 12px;border-bottom:1px solid var(--line);color:var(--text);font-weight:600">Cost</td>
-                  <td style="padding:10px 12px;border-bottom:1px solid var(--line)">$999.7K</td>
-                  <td style="padding:10px 12px;border-bottom:1px solid var(--line)">$1.60M</td>
-                  <td style="padding:10px 12px;border-bottom:1px solid var(--line)">$2.58M</td>
-                  <td style="padding:10px 12px;border-bottom:1px solid var(--line)">$3.93M</td>
-                  <td style="padding:10px 12px;border-bottom:1px solid var(--line)">$7.31M</td>
+                  <td class="rowlabel">Cost</td>
+                  <td>$999.7K</td>
+                  <td>$1.60M</td>
+                  <td>$2.58M</td>
+                  <td>$3.93M</td>
+                  <td>$7.31M</td>
                 </tr>
                 <tr>
-                  <td style="padding:10px 12px;color:var(--accent-2);font-weight:700">Profit</td>
-                  <td style="padding:10px 12px;color:var(--accent-2);font-weight:700">$(5.2K)</td>
-                  <td style="padding:10px 12px;color:var(--accent-2);font-weight:700">$635.7K</td>
-                  <td style="padding:10px 12px;color:var(--accent-2);font-weight:700">$1.22M</td>
-                  <td style="padding:10px 12px;color:var(--accent-2);font-weight:700">$2.04M</td>
-                  <td style="padding:10px 12px;color:var(--accent-2);font-weight:700">$4.04M</td>
+                  <td class="profit">Profit</td>
+                  <td class="profit">$(5.2K)</td>
+                  <td class="profit">$635.7K</td>
+                  <td class="profit">$1.22M</td>
+                  <td class="profit">$2.04M</td>
+                  <td class="profit">$4.04M</td>
                 </tr>
               </tbody>
             </table>
@@ -171,7 +191,7 @@
         </section>
 
         <!-- GTM -->
-        <section class="case-section reveal">
+        <section class="case-section">
           <h2>Go-to-market</h2>
           <p>A venue-by-venue expansion model, where we prove the operation in one place and then scale:</p>
           <ul>
@@ -182,7 +202,7 @@
         </section>
 
         <!-- Funding -->
-        <section class="case-section reveal">
+        <section class="case-section">
           <h2>Funding plan</h2>
           <p>CoPilot sought <strong>$700K</strong> to cover startup costs, tech, and working capital through year one:</p>
           <ul>
@@ -193,18 +213,18 @@
         </section>
 
         <!-- Team -->
-        <section class="case-section reveal">
+        <section class="case-section">
           <h2>The team</h2>
           <p>Four co-founders, each owning a function. I led <strong>growth and finance</strong>; Brycen Adams (CEO) led concept and problem-solution fit; Trey Teteak (Head of Product) drove product and partnerships; Jordan Schwartz (Head of Operations) led market and competitive analysis.</p>
         </section>
 
         <!-- Takeaways -->
-        <section class="case-section reveal">
+        <section class="case-section">
           <h2>What I took away</h2>
           <p>Building the model end-to-end forced real rigor. I had to price against a competitor's surge behavior and size the market from both the top down and the bottom up, then pressure-test the plan against its true constraint, which is driver supply rather than demand. The clearest lesson is that a sharp beachhead and honest unit economics matter more than a big TAM slide.</p>
         </section>
 
-        <section class="case-section reveal" style="text-align:center">
+        <section class="case-section" style="text-align:center">
           <a href="../index.html#work" class="btn btn--ghost">← Back to all work</a>
           <a href="../index.html#contact" class="btn btn--primary">Get in touch</a>
         </section>
@@ -213,8 +233,8 @@
     </div>
   </main>
 
-  <footer class="footer">
-    <div class="container footer__inner">
+  <footer class="colophon">
+    <div class="wrap colophon__in">
       <span>© 2026 Griffin Terry</span>
       <span>CoPilot · Case study</span>
     </div>

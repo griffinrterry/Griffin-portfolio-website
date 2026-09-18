@@ -102,8 +102,22 @@ the page's primary gesture, and headline, lede and both CTAs still sit above the
 at 1440x950. Reduced twice from the original 5.6rem; shrinking further to satisfy the
 rule would cost the design its voice.
 
+## Case studies
+
+The case-study layer reuses the same tokens and hairline composition:
+
+- `.case-meta` is a record header — mono labels over values on a rule, not a stat strip.
+- `.stats` / `.stat` are hairline-separated figures in mono, never big-number tiles.
+- `.rules` and `.flow` are label-column tables; `.grid-cards` is hairline-separated
+  entries rather than a grid of boxes. The old build used a 2px colored `border-left`,
+  which the floor bans; callouts now use a 1px rule.
+- `.figures` is the case-study data table, inside a `.tablewrap` that scrolls on its
+  own so the page never scrolls sideways.
+- Product logos were dropped from the case heroes: a dark-navy brand mark is
+  unreadable on the night ground, and the typographic hero is the world's own voice.
+
 ## Status
 
-Applied to `index.html` via `record.css`. The three case studies
-(`projects/next4.html`, `hirely.html`, `copilot.html`) still run the old `styles.css`
-and are pending rollout.
+Applied site-wide via `record.css`: `index.html` and all three case studies.
+The old `styles.css` has been deleted, along with the scroll-reveal and cursor-glow
+scripts that served it. `script.js` now holds only the theme toggle and the menu.
