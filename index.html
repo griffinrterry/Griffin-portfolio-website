@@ -1,249 +1,316 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Griffin Terry: Product &amp; Agent Systems Portfolio</title>
-  <meta name="description" content="Griffin Terry: product builder and founder. I ship 0→1 products end-to-end and design the AI agent systems that run them — next4, Hirely, CoPilot." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Griffin Terry — Product, data, and agent systems</title>
+<meta name="description" content="Griffin Terry ships products end-to-end and builds the agent systems that run them. Co-founder of next4 (live on the App Store), solo founder of Hirely." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,400..600&family=Public+Sans:ital,wght@0,400..700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="record.css" />
+<script>
+  // Applied before paint: a stored choice wins, otherwise the OS decides.
+  try {
+    var t = localStorage.getItem('theme');
+    if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+  } catch (e) {}
+</script>
 </head>
 <body>
-  <!-- Nav -->
-  <header class="nav">
-    <div class="container nav__inner">
-      <a href="#top" class="brand">Griffin<span>.</span>Terry</a>
-      <nav class="nav__links">
-        <a href="#about">About</a>
+
+<header class="masthead">
+  <div class="masthead__in">
+    <a class="wordmark" href="#top">Griffin Terry<i>.</i></a>
+    <div class="masthead__right">
+      <nav>
         <a href="#work">Work</a>
-        <a href="#agents">Agent systems</a>
-        <a href="#experience">Experience</a>
+        <a href="#method">Method</a>
+        <a href="#record">Record</a>
         <a href="#contact">Contact</a>
-        <a href="#contact" class="nav__cta">Get in touch</a>
       </nav>
-      <button class="nav__toggle" aria-label="Menu">☰</button>
+      <button class="themetoggle" type="button" aria-label="Switch to dark theme">
+        <svg class="i-sun" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
+          <circle cx="10" cy="10" r="3.6"/>
+          <path d="M10 1.6v2.2M10 16.2v2.2M18.4 10h-2.2M3.8 10H1.6M15.94 4.06l-1.56 1.56M5.62 14.38l-1.56 1.56M15.94 15.94l-1.56-1.56M5.62 5.62L4.06 4.06"/>
+        </svg>
+        <svg class="i-moon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M16.5 11.75A7 7 0 0 1 8.25 3.5a7 7 0 1 0 8.25 8.25Z"/>
+        </svg>
+      </button>
+      <button class="navtoggle" aria-label="Menu" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 6.5h16M3 11h16M3 15.5h16"/></svg>
+      </button>
     </div>
-  </header>
+  </div>
+</header>
 
-  <main id="top">
-    <!-- Hero -->
-    <section class="hero">
-      <div class="container">
-        <span class="eyebrow reveal"><span class="dot"></span> Product · Data · Agent Systems</span>
-        <h1 class="reveal">I ship products end-to-end, and build the <span class="grad">agent systems</span> that run them.</h1>
-        <p class="lead reveal">I'm Griffin Terry. I co-founded <strong>next4</strong>, a college-matching app now on the App Store, and I'm the solo founder of <strong>Hirely</strong>. I work across the whole thing: finding the problem, modeling the data, building the product, and designing the AI systems that handle its distribution. This is what I've shipped.</p>
-        <div class="hero__actions reveal">
-          <a href="#work" class="btn btn--primary">View my work →</a>
-          <a href="assets/GriffinTerry-Resume.pdf" target="_blank" rel="noopener" class="btn btn--ghost">Download résumé</a>
-          <a href="#contact" class="btn btn--ghost">Get in touch</a>
-        </div>
+<main id="top">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap">
+      <h1 class="display">I ship products end&#8209;to&#8209;end, and the <em>agent systems</em> that run them.</h1>
+      <p class="lede">I'm Griffin Terry. I co-founded <strong>next4</strong>, a college-matching app on the App Store built over 6,271 institutions of federal data, and I'm the solo founder of <strong>Hirely</strong>. I do the whole arc: find the problem, model the data, build the product, then design the AI systems that distribute it.</p>
+      <div class="hero__acts">
+        <a class="btn btn--solid" href="#work">See the work</a>
+        <a class="btn btn--line" href="assets/GriffinTerry-Resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a>
+        <a class="btn btn--line" href="mailto:griffinrterry@gmail.com">Email me</a>
       </div>
-    </section>
 
-    <!-- About -->
-    <section class="section" id="about">
-      <div class="container">
-        <div class="section__head reveal">
-          <p class="section__kicker">About me</p>
-          <h2>I build the product, then the system that runs it.</h2>
+      <!-- The authored moment -->
+      <div class="erratum">
+        <div class="erratum__h"><span>Correction · next4 · Aug 2026</span><hr /></div>
+        <p>An early version of our ranking treated "academically strong" and "socially active" as opposite ends of one scale — which quietly assumed a school can't be both. Splitting it into two measured indexes showed the real relationship:</p>
+        <p class="fix"><span class="was">correlation −1 (assumed)</span><span class="arrow">→</span><span class="now">+0.42 (measured)</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ledger -->
+  <section class="band" id="ledger">
+    <div class="wrap">
+      <div class="band__head">
+        <h2 class="display">Things I can show you.</h2>
+        <p>Every figure below is traceable to a public source or a shipped artifact. None of it is rounded up.</p>
+      </div>
+      <table class="ledger">
+        <thead>
+          <tr><th scope="col">Figure</th><th scope="col">What it is</th><th scope="col">Where it comes from</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="fig">6,271</td>
+            <td class="what">Institutions in the knowledge base I sourced and modeled for next4</td>
+            <td class="src">IPEDS · College Scorecard · CDS · Carnegie · BEA</td>
+          </tr>
+          <tr>
+            <td class="fig">145,000+</td>
+            <td class="what">Individual facts behind it, each carrying its own provenance</td>
+            <td class="src">next4 platform, migration-verified</td>
+          </tr>
+          <tr>
+            <td class="fig">1,226</td>
+            <td class="what">Reddit comments coded and adversarially verified before we wrote the product's code</td>
+            <td class="src">39 threads, 4-coder fan-out</td>
+          </tr>
+          <tr>
+            <td class="fig">84</td>
+            <td class="what">Parents and students surveyed on demand, price and AI posture</td>
+            <td class="src">Fielded Aug 2026 · n=69 / n=15</td>
+          </tr>
+          <tr>
+            <td class="fig">14</td>
+            <td class="what">Posts a week across six channels, produced by a marketing system I designed</td>
+            <td class="src">next4 social system, running now</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Work -->
+  <section class="band" id="work">
+    <div class="wrap">
+      <div class="band__head">
+        <h2 class="display">Three things I built.</h2>
+      </div>
+
+      <a class="entry entry--lead" href="projects/next4.html">
+        <div class="entry__top">
+          <h3>next4</h3>
+          <span class="entry__role">Co-founder · App Store</span>
         </div>
-        <div class="about">
-          <div class="about__body reveal">
-            <p>I'm a <em>cum laude</em> CU Boulder graduate (B.A. in Political Science &amp; Economics, minor in Business) who builds products end-to-end. At <strong>next4</strong> I'm a co-founder covering product, the data layer, and marketing: I sourced and modeled a knowledge base of 6,271 institutions and 145,000+ federal facts, drove the build through Claude Code, and shipped it to the App Store. At <strong>Hirely</strong>, as solo founder, I architected and deployed the full-stack MVP on Supabase, Stripe, and Vercel.</p>
-            <p>The part I've gotten most deliberate about is <strong>working with AI agents as a system rather than a shortcut</strong>. next4's marketing runs as an agent-operated organization I designed — seven content pillars, six channels, twelve non-negotiable rules, and a verification step that has killed a finished post for failing fact-check. The engineering runs the same way: spec, plan, subagent execution with tests first, then an adversarial review pass whose job is to find what the builder missed.</p>
-            <p>I gravitate toward the messy middle, where a vague problem has to become something people actually need — validating CoPilot's market with 100+ customer interviews, coding 1,226 Reddit comments before committing a line of next4's code. What I care about most is <strong>honesty in the product</strong>: no invented resume experience at Hirely, no fabricated school statistic at next4, no admission-chance percentage we can't defend.</p>
-            <p>I'm <strong>open to roles across my areas of experience.</strong></p>
-          </div>
-          <aside class="about__card reveal">
-            <img class="headshot" src="assets/headshot.jpg" alt="Griffin Terry" loading="lazy" onerror="this.style.display='none'" />
-            <h3>At a glance</h3>
-            <ul class="factlist">
-              <li><b>›</b> <span>Co-founder, next4: live on the App Store</span></li>
-              <li><b>›</b> <span>Solo founder, Hirely: built &amp; shipped the MVP</span></li>
-              <li><b>›</b> <span>AI Trainer at Handshake</span></li>
-              <li><b>›</b> <span>Designed an agent-run marketing org: 14 posts/week, 6 channels</span></li>
-              <li><b>›</b> <span>CU Boulder: Poli-Sci &amp; Economics, Business minor · cum laude (3.75 GPA)</span></li>
-              <li><b>›</b> <span>Studied international economics in Madrid (Universidad Carlos III)</span></li>
-              <li><b>›</b> <span>Stack: Supabase · Postgres · Expo · Stripe · Vercel · Claude Code · RStudio</span></li>
-              <li><b>›</b> <span>Open to roles across my areas of experience</span></li>
+        <div class="entry__body">
+          <div>
+            <p>The college search runs backwards: a student checks a box on a test, their data goes on a list colleges buy, and 400 brochures arrive from schools that bought their demographic. next4 runs it forwards. A student sorts 86 preference cards; a deterministic engine ranks real schools against federal data and shows which of their own answers put each one there. No language model ever touches a school statistic, so it can't invent one.</p>
+            <ul class="tags">
+              <li>Product &amp; data model</li>
+              <li>Match engine</li>
+              <li>Demand research</li>
+              <li>Agent-run marketing</li>
             </ul>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <!-- Work -->
-    <section class="section" id="work">
-      <div class="container">
-        <div class="section__head reveal">
-          <p class="section__kicker">Selected work</p>
-          <h2>Products I've built.</h2>
-          <p>Each one is framed around the problem, my role, what I shipped, and the outcome.</p>
-        </div>
-        <div class="projects-grid">
-          <!-- next4 -->
-          <a class="pcard pcard--wide reveal" href="projects/next4.html">
-            <span class="pcard__tag">Co-founder · Live on the App Store</span>
-            <h3>next4</h3>
-            <p>A college-matching app for high school students. A student sorts 86 preference cards; a deterministic engine ranks 6,271 real schools against 145,000+ federal facts and shows which of their own answers put each one there. No language model ever touches a school statistic. I also designed the agent-run marketing organization behind it.</p>
-            <div class="pcard__meta">
-              <span class="chip">0→1 · iOS</span>
-              <span class="chip">Data &amp; match engine</span>
-              <span class="chip">Agentic marketing</span>
-            </div>
-            <span class="pcard__link">Read the case study <span class="arrow">→</span></span>
-          </a>
-
-          <!-- Hirely -->
-          <a class="pcard reveal" href="projects/hirely.html">
-            <span class="pcard__tag">Solo founder · Built &amp; shipped</span>
-            <h3>Hirely</h3>
-            <p>A live tool that tailors your real resume to a specific job, without inventing experience, so qualified candidates actually get seen. I built the full-stack MVP and run growth, and it's now in early beta with 100% scan-feature activation.</p>
-            <div class="pcard__meta">
-              <span class="chip">0→1 · Full-stack</span>
-              <span class="chip">Resume AI</span>
-              <span class="chip">Agile + Growth</span>
-            </div>
-            <span class="pcard__link">Read the case study <span class="arrow">→</span></span>
-          </a>
-
-          <!-- CoPilot -->
-          <a class="pcard reveal" href="projects/copilot.html">
-            <span class="pcard__tag">Head of Growth &amp; Finance</span>
-            <h3>CoPilot</h3>
-            <p>A two-driver rideshare that gets you <em>and your car</em> home safely after a night out. I owned the business model, pricing, and the five-year financial plan.</p>
-            <div class="pcard__meta">
-              <span class="chip">Mobility startup</span>
-              <span class="chip">Financial model</span>
-              <span class="chip">GTM</span>
-            </div>
-            <span class="pcard__link">Read the case study <span class="arrow">→</span></span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Agent systems -->
-    <section class="section" id="agents">
-      <div class="container">
-        <div class="section__head reveal">
-          <p class="section__kicker">How I work</p>
-          <h2>Building with agents, as a system.</h2>
-          <p>Getting an AI agent to produce something is easy and mostly worthless. The work is in the structure around it — what it's allowed to claim, what checks it, and what happens when it's confidently wrong. Here's how I've built that across next4 and Hirely.</p>
-        </div>
-        <div class="agents">
-          <article class="acard reveal">
-            <span class="acard__i">01 — Distribution</span>
-            <h3>An agent-run marketing org</h3>
-            <p>next4's marketing has no team. A structured datastore holds seven content pillars, six channels, and the weekly schedule; agents run a Monday research scrape and email me each day's posts with full scripts and the assets to prepare. It produces <strong>14 posts a week</strong>, and I work from the email, never from a dashboard.</p>
-          </article>
-          <article class="acard reveal">
-            <span class="acard__i">02 — Guardrails</span>
-            <h3>Rules that can kill a post</h3>
-            <p>Twelve non-negotiables sit between a draft and a channel: never a chance percentage, never an unsourced school statistic, no identifying information about minors, verify every deadline against the official source. A finished "ChatGPT hallucinated this" video was <strong>cut after verification proved it hadn't</strong> — the replacement was both true and a better argument.</p>
-          </article>
-          <article class="acard reveal">
-            <span class="acard__i">03 — Engineering</span>
-            <h3>Spec, plan, build, adversarial review</h3>
-            <p>I build through Claude Code in a fixed loop: written spec, task plan, subagent execution with the test written first, then a separate review pass whose only job is to find what the builder missed. It has caught a scoring measure that was quietly tracking family wealth, and a bug that passed its own unit test.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Experience -->
-    <section class="section" id="experience">
-      <div class="container">
-        <div class="section__head reveal">
-          <p class="section__kicker">Experience &amp; education</p>
-          <h2>Where I've built and led.</h2>
-        </div>
-        <div class="timeline">
-          <div class="trow reveal">
-            <div class="trow__when">Jul 2026 – Present</div>
-            <div class="trow__what">
-              <h3>Co-founder · <span class="grad">next4</span></h3>
-              <p class="trow__where">Boulder, CO</p>
-              <p>Co-founded a college-matching iOS app, shipped to the App Store in September 2026. Sourced and modeled a knowledge base of 6,271 institutions and 145,000+ facts from IPEDS, College Scorecard, the Common Data Set, Carnegie classifications, and BEA price data, then drove the deterministic match engine and Expo app through Claude Code with spec-first, test-driven subagent workflows. Ran demand validation across 1,226 coded Reddit comments before committing to the build. Designed and operate the AI marketing organization that produces 14 posts a week across six channels. <a href="projects/next4.html" style="color:var(--accent-2)">See case study →</a></p>
-            </div>
+            <span class="entry__more">Read the case study <span class="a">→</span></span>
           </div>
-          <div class="trow reveal">
-            <div class="trow__when">Apr 2026 – Present</div>
-            <div class="trow__what">
-              <h3>Founder &amp; CEO · <span class="grad">Hirely</span></h3>
-              <p class="trow__where">Boulder, CO</p>
-              <p>Architected and deployed a full-stack MVP (Supabase, Stripe, Vercel), using Claude Code to accelerate development. Drove 2,000+ impressions, 100+ profile visits, and 60+ site visits in the first 14 days by automating LinkedIn, Instagram, and TikTok distribution with AI agents. Pitched product vision and architecture to investors, users, and peers.</p>
-            </div>
-          </div>
-          <div class="trow reveal">
-            <div class="trow__when">May 2026 – Present</div>
-            <div class="trow__what">
-              <h3>AI Trainer · Handshake</h3>
-              <p class="trow__where">Remote</p>
-              <p>Train and evaluate AI models, applying hands-on agentic-AI and product experience to improve model quality.</p>
-            </div>
-          </div>
-          <div class="trow reveal">
-            <div class="trow__when">Dec 2023 – Jan 2026</div>
-            <div class="trow__what">
-              <h3>President · Up&amp;Up Festival</h3>
-              <p class="trow__where">Boulder, CO · Rose from Student Ambassador → Lead Ambassador → President</p>
-              <p>Sold out a 500-person venue by leading a cross-functional team of 16 across marketing, sales, and social, running 10 tabling events and outreach to 5,000+ followers. Secured $1,000+ in sponsorships and built student-org partnerships that hosted events of 250+ attendees.</p>
-            </div>
-          </div>
-          <div class="trow reveal">
-            <div class="trow__when">Jan – May 2026</div>
-            <div class="trow__what">
-              <h3>Director of Growth &amp; Finance · CoPilot</h3>
-              <p class="trow__where">Boulder, CO · Class project / pitch competition</p>
-              <p>Tied for first of 12 teams pitching to 50 peers and community members. Validated demand, pivoted the target segment after 100+ consumer interviews, and modeled 5-year profitability. <a href="projects/copilot.html" style="color:var(--accent-2)">See case study →</a></p>
-            </div>
-          </div>
-          <div class="trow reveal">
-            <div class="trow__when">Sep 2022 – Jun 2023</div>
-            <div class="trow__what">
-              <h3>Director of Event Management · Phi Kappa Psi</h3>
-              <p class="trow__where">Seattle, WA</p>
-              <p>Directed a team of 80 to execute 50 events, six of them with 1,000+ attendees. Secured $6,000 in Red Bull sponsorship and partnered with the IFC and Washington State Liquor Board on security and venue logistics.</p>
-            </div>
-          </div>
-          <div class="trow reveal">
-            <div class="trow__when">2022 – 2026</div>
-            <div class="trow__what">
-              <h3>Education</h3>
-              <p class="trow__where">University of Colorado Boulder · Universidad Carlos III de Madrid · University of Washington</p>
-              <p>B.A. in Political Science &amp; Economics, Minor in Business at CU Boulder (cum laude, 3.75 GPA, May 2026). Studied international economics at Universidad Carlos III de Madrid (Spring 2025). Dean's List: Winter '23, Fall '23, Spring '24, Fall '24, Spring '26.</p>
-            </div>
-          </div>
+          <figure class="entry__shot">
+            <img src="assets/next4/app/06-why-match.png" alt="next4 showing why a school matched, listing the student's own must-haves" loading="lazy" />
+            <figcaption>Every result names the student's own cards as its reason, computed from the same pass that produced the score.</figcaption>
+          </figure>
         </div>
-      </div>
-    </section>
+      </a>
 
-    <!-- Contact -->
-    <section class="section contact" id="contact">
-      <div class="container reveal">
-        <p class="section__kicker">Contact</p>
-        <h2>Let's talk product.</h2>
-        <p>Open to roles across my areas of experience, and always up for a good conversation.</p>
-        <div class="contact__links">
-          <a class="btn btn--primary" href="mailto:griffinrterry@gmail.com">Email me</a>
-          <a class="btn btn--ghost" href="https://www.linkedin.com/in/griffin-terry-2123aa252" target="_blank" rel="noopener">LinkedIn</a>
-          <a class="btn btn--ghost" href="https://apps.apple.com/app/id6806343171" target="_blank" rel="noopener">next4 ↗</a>
-          <a class="btn btn--ghost" href="https://www.hirelyapply.com" target="_blank" rel="noopener">Hirely ↗</a>
+      <a class="entry entry--sub" href="projects/hirely.html">
+        <div class="entry__top">
+          <h3>Hirely</h3>
+          <span class="entry__role">Solo founder</span>
         </div>
-      </div>
-    </section>
-  </main>
+        <p>A tool that tailors your real résumé to a specific job without inventing experience. I architected and deployed the full-stack MVP on Supabase, Stripe and Vercel. In early beta, every waitlist signup since launch has used the Stand-Out Scan.</p>
+        <span class="entry__more">Read the case study <span class="a">→</span></span>
+      </a>
 
-  <footer class="footer">
-    <div class="container footer__inner">
-      <span>© 2026 Griffin Terry</span>
-      <span>Built end-to-end · Deployed on Vercel</span>
+      <a class="entry entry--sub" href="projects/copilot.html">
+        <div class="entry__top">
+          <h3>CoPilot</h3>
+          <span class="entry__role">Growth &amp; finance</span>
+        </div>
+        <p>A two-driver rideshare that gets you and your car home. I owned the business model, pricing and five-year plan, pivoted the target segment after 100+ consumer interviews, and tied for first of twelve teams.</p>
+        <span class="entry__more">Read the case study <span class="a">→</span></span>
+      </a>
     </div>
-  </footer>
+  </section>
 
-  <script src="script.js"></script>
+  <!-- Method -->
+  <section class="band" id="method">
+    <div class="wrap">
+      <div class="band__head">
+        <h2 class="display">Getting an agent to produce something is easy. The work is what checks it.</h2>
+        <p>I build with AI agents constantly. Almost everything worth showing came from the structure around them, not the generation itself.</p>
+      </div>
+
+      <div class="pairs">
+        <div class="pair">
+          <p class="pair__claim">I run marketing as an organization, not a prompt.</p>
+          <div class="pair__proof">
+            next4's marketing has no team. A structured workbook holds seven content pillars, six channels and the weekly schedule; agents run a Monday research scrape and email me each day's posts with full scripts and the assets to prepare. I work from the email, never a dashboard.
+            <span class="receipt">14 posts/week · TikTok, Instagram, LinkedIn, X, Facebook groups and page</span>
+          </div>
+        </div>
+
+        <div class="pair">
+          <p class="pair__claim">The verification step has to be able to kill the work.</p>
+          <div class="pair__proof">
+            A finished TikTok script opened with "ChatGPT made up a number in the first thirty seconds." Before filming, the check re-ran the prompt and audited every figure against College Scorecard. It hadn't made anything up. The post was killed and replaced with a true story that argued better — that ChatGPT can't compare anything, stacking five aid figures from five different definitions in one column.
+            <span class="receipt">Brief ships with the prompt used, the audit table, every source URL and its retrieval date</span>
+          </div>
+        </div>
+
+        <div class="pair">
+          <p class="pair__claim">Research earns the right to cut a feature.</p>
+          <div class="pair__proof">
+            Chancing was the most-requested feature in the category and the least trusted — students asked for it and disbelieved it in the same thread. We built the percentage screen, looked at it, and deleted the number. A survey later confirmed the call: asked to keep only one feature, 75% of parents kept discovery; essay tooling, which the whole competitive set is racing to build, got 11 votes of 69.
+            <span class="receipt">1,226 Reddit comments coded · 69 parents and 15 students surveyed</span>
+          </div>
+        </div>
+
+        <div class="pair">
+          <p class="pair__claim">Agents are confidently wrong, so review is a separate job.</p>
+          <div class="pair__proof">
+            I build through Claude Code in a fixed loop — written spec, task plan, subagent execution with the test first, then a review pass whose only job is finding what the builder missed. It has caught an eviction bug in list-shaping, a scoring measure quietly tracking family wealth, and a whitespace bug that passed its own unit test because the test runner kept a space the production build dropped.
+            <span class="receipt">Engine and knowledge-base packages: several hundred tests</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About + Record -->
+  <section class="band" id="record">
+    <div class="wrap">
+      <div class="band__head">
+        <h2 class="display">Where I've built and led.</h2>
+      </div>
+
+      <div class="about" style="margin-bottom: 56px">
+        <div class="prose">
+          <p>I'm a <em>cum laude</em> CU Boulder graduate — Political Science &amp; Economics, with a Business minor — who builds products end to end. At next4 I cover product, the data layer and marketing. At Hirely, as solo founder, I built and deployed the whole thing myself.</p>
+          <p>What I care about most is honesty in the product. Hirely won't invent experience you don't have. next4 won't show an admission percentage it can't defend, and won't write a student's essay. The same rule governs the marketing: twelve non-negotiables sit between a draft and a channel, and they have stopped finished work from going out.</p>
+          <p>I gravitate toward the messy middle, where a vague problem has to turn into something people actually need — coding 1,226 Reddit comments before writing a line of next4, pivoting CoPilot's whole target segment after 100+ interviews. I'm open to roles across my areas of experience.</p>
+        </div>
+        <aside class="about__card">
+          <img src="assets/headshot.jpg" alt="Griffin Terry" loading="lazy" />
+          <dl>
+            <div><dt>Now</dt><dd>Co-founder at next4 · Solo founder at Hirely · AI Trainer at Handshake</dd></div>
+            <div><dt>Based</dt><dd>Boulder, Colorado</dd></div>
+            <div><dt>Works with</dt><dd>Supabase · Postgres · Expo · Stripe · Vercel · Claude Code · RStudio</dd></div>
+            <div><dt>Studied</dt><dd>CU Boulder, cum laude, 3.75 · Universidad Carlos III de Madrid</dd></div>
+          </dl>
+        </aside>
+      </div>
+
+      <div class="record">
+        <div class="rec">
+          <div class="rec__when">Jul 2026 — present</div>
+          <div>
+            <h3>Co-founder, next4</h3>
+            <p class="rec__where">Boulder, CO</p>
+            <p>Co-founded a college-matching iOS app, shipped to the App Store in September 2026. Sourced and modeled a 6,271-institution knowledge base from five federal datasets, drove the deterministic match engine and Expo app through Claude Code with spec-first, test-driven workflows, and ran demand validation across 1,226 coded Reddit comments and an 84-person survey before committing to the build. Designed and operate the agent-run marketing system behind distribution.</p>
+          </div>
+        </div>
+        <div class="rec">
+          <div class="rec__when">Apr 2026 — present</div>
+          <div>
+            <h3>Founder &amp; CEO, Hirely</h3>
+            <p class="rec__where">Boulder, CO</p>
+            <p>Architected and deployed a full-stack MVP on Supabase, Stripe and Vercel using Claude Code. Drove 2,000+ impressions, 100+ profile visits and 60+ site visits in the first 14 days by automating LinkedIn, Instagram and TikTok distribution with AI agents. Pitched product vision and architecture to investors, users and peers.</p>
+          </div>
+        </div>
+        <div class="rec">
+          <div class="rec__when">May 2026 — present</div>
+          <div>
+            <h3>AI Trainer, Handshake</h3>
+            <p class="rec__where">Remote</p>
+            <p>Train and evaluate AI models, applying hands-on agentic-AI and product experience to improve model quality.</p>
+          </div>
+        </div>
+        <div class="rec">
+          <div class="rec__when">Dec 2023 — Jan 2026</div>
+          <div>
+            <h3>President, Up&amp;Up Festival</h3>
+            <p class="rec__where">Boulder, CO · Ambassador → Lead → President</p>
+            <p>Sold out a 500-person venue leading a cross-functional team of 16 across marketing, sales and social, running 10 tabling events and outreach to 5,000+ followers. Secured $1,000+ in sponsorships and built partnerships hosting events of 250+ attendees.</p>
+          </div>
+        </div>
+        <div class="rec">
+          <div class="rec__when">Jan — May 2026</div>
+          <div>
+            <h3>Director of Growth &amp; Finance, CoPilot</h3>
+            <p class="rec__where">Boulder, CO</p>
+            <p>Tied for first of 12 teams pitching to 50 peers and community members. Validated demand, pivoted the target segment after 100+ consumer interviews, and modeled five-year profitability.</p>
+          </div>
+        </div>
+        <div class="rec">
+          <div class="rec__when">Sep 2022 — Jun 2023</div>
+          <div>
+            <h3>Director of Event Management, Phi Kappa Psi</h3>
+            <p class="rec__where">Seattle, WA</p>
+            <p>Directed a team of 80 to execute 50 events, six with 1,000+ attendees. Secured $6,000 in Red Bull sponsorship and partnered with the IFC and Washington State Liquor Board on security and venue logistics.</p>
+          </div>
+        </div>
+        <div class="rec">
+          <div class="rec__when">2022 — 2026</div>
+          <div>
+            <h3>Education</h3>
+            <p class="rec__where">CU Boulder · Universidad Carlos III de Madrid · University of Washington</p>
+            <p>B.A. Political Science &amp; Economics, Business minor, CU Boulder — cum laude, 3.75, May 2026. International economics at Universidad Carlos III de Madrid, spring 2025. Dean's List: Winter '23, Fall '23, Spring '24, Fall '24, Spring '26.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <h2 class="display">If any of this is the kind of work you need done, I'd like to talk.</h2>
+      <p>Open to roles across my areas of experience. Happy to walk through any decision on this site, including the ones that turned out wrong.</p>
+      <div class="hero__acts">
+        <a class="btn btn--solid" href="mailto:griffinrterry@gmail.com">griffinrterry@gmail.com</a>
+        <a class="btn btn--line" href="https://www.linkedin.com/in/griffin-terry-2123aa252" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn btn--line" href="https://apps.apple.com/app/id6806343171" target="_blank" rel="noopener">next4 ↗</a>
+        <a class="btn btn--line" href="https://www.hirelyapply.com" target="_blank" rel="noopener">Hirely ↗</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="colophon">
+  <div class="wrap colophon__in">
+    <span>© 2026 Griffin Terry</span>
+    <span>Set in Newsreader, Public Sans and IBM Plex Mono</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
